@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RK Projects | AI Assistant & Resume Builder</title>
+<meta name="description" content="Explore RK's live software projects including RK AI Assistant and RK Resume Builder.">
+<meta name="theme-color" content="#0f172a">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top left,#172554 0,transparent 35%),radial-gradient(circle at top right,#312e81 0,transparent 30%),#020617;color:#e2e8f0;line-height:1.7;min-height:100vh}
+a{color:inherit;text-decoration:none}.container{width:min(1180px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:1000;backdrop-filter:blur(18px);background:rgba(2,6,23,.72);border-bottom:1px solid rgba(148,163,184,.12)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.35rem;font-weight:800;letter-spacing:-.5px}.logo span{color:#60a5fa}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.95rem;color:#cbd5e1}.nav-links a{transition:.25s}.nav-links a:hover{color:#60a5fa}
+.hero{padding:110px 0 90px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:rgba(59,130,246,.1);border:1px solid rgba(96,165,250,.25);color:#93c5fd;font-size:.85rem;margin-bottom:24px}
+.status-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 12px #22c55e}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.05;letter-spacing:-3px;margin-bottom:24px}
+.gradient-text{background:linear-gradient(90deg,#60a5fa,#a78bfa,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{max-width:720px;margin:auto;font-size:1.12rem;color:#94a3b8}
+.hero-buttons{margin-top:34px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{padding:13px 22px;border-radius:10px;font-weight:700;font-size:.95rem;transition:.25s;border:1px solid transparent;display:inline-block}
+.btn-primary{background:#2563eb;color:white}.btn-primary:hover{background:#3b82f6;transform:translateY(-2px)}
+.btn-secondary{background:rgba(15,23,42,.8);border-color:#334155;color:#cbd5e1}.btn-secondary:hover{border-color:#60a5fa;color:white}
+section{padding:80px 0}.section-heading{text-align:center;margin-bottom:48px}.section-heading span{color:#60a5fa;font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:2px}.section-heading h2{font-size:clamp(2rem,5vw,3rem);margin-top:8px;letter-spacing:-1px}.section-heading p{color:#94a3b8;max-width:650px;margin:12px auto 0}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.project-card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(15,23,42,.95),rgba(15,23,42,.65));border:1px solid rgba(148,163,184,.15);border-radius:22px;padding:32px;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.project-card:hover{transform:translateY(-8px);border-color:rgba(96,165,250,.45);box-shadow:0 25px 70px rgba(0,0,0,.35)}
+.project-number{position:absolute;top:18px;right:24px;font-size:4rem;font-weight:900;color:rgba(255,255,255,.035)}
+.project-icon{width:60px;height:60px;display:grid;place-items:center;font-size:1.8rem;border-radius:16px;background:rgba(59,130,246,.12);border:1px solid rgba(96,165,250,.2);margin-bottom:22px}
+.project-card h3{font-size:1.65rem;margin-bottom:12px}.project-card>p{color:#94a3b8;margin-bottom:22px}
+.tech-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:25px}.tech{padding:5px 10px;border-radius:7px;background:rgba(30,41,59,.8);border:1px solid #334155;color:#cbd5e1;font-size:.78rem}
+.project-actions{display:flex;gap:10px;flex-wrap:wrap}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.detail-card{background:rgba(15,23,42,.7);border:1px solid rgba(148,163,184,.13);border-radius:18px;padding:28px}.detail-card h3{margin-bottom:15px;color:#f8fafc}.detail-card p{color:#94a3b8}
+.feature-list{list-style:none;display:grid;gap:12px}.feature-list li{color:#cbd5e1;padding-left:26px;position:relative}.feature-list li::before{content:"✓";position:absolute;left:0;color:#60a5fa;font-weight:800}
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.stack-item{padding:22px;text-align:center;background:rgba(15,23,42,.7);border:1px solid rgba(148,163,184,.12);border-radius:14px;transition:.25s}.stack-item:hover{transform:translateY(-4px);border-color:#475569}.stack-icon{font-size:1.8rem;margin-bottom:8px}.stack-item strong{display:block}.stack-item small{color:#64748b}
+.cta{text-align:center;padding:70px 30px;border-radius:24px;background:radial-gradient(circle at center,rgba(37,99,235,.22),transparent 65%);border:1px solid rgba(96,165,250,.15)}.cta h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:14px}.cta p{color:#94a3b8;max-width:650px;margin:auto}.cta .hero-buttons{margin-top:25px}
+footer{border-top:1px solid rgba(148,163,184,.1);padding:30px 0;color:#64748b;text-align:center}footer strong{color:#94a3b8}
+@media(max-width:850px){.projects,.detail-grid{grid-template-columns:1fr}.stack{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.hero{padding-top:80px}}
+@media(max-width:500px){section{padding:60px 0}.project-card{padding:24px}.stack{grid-template-columns:1fr 1fr}.hero h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container nav-inner">
+<a href="#" class="logo">RK<span>Projects</span></a>
+<ul class="nav-links">
+<li><a href="#projects">Projects</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#technology">Technology</a></li>
+<li><a href="#contact">Live Projects</a></li>
+</ul>
+</div>
+</nav>
+
+<header class="hero">
+<div class="container">
+<div class="badge"><span class="status-dot"></span>Live Projects</div>
+<h1>Building useful <span class="gradient-text">software with AI</span></h1>
+<p>A collection of live projects focused on artificial intelligence, developer productivity, automation and practical web applications.</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="https://rkchat-ai.duckdns.org/index.html" target="_blank" rel="noopener">🤖 Open RK AI Assistant</a>
+<a class="btn btn-secondary" href="https://rk-resume-builder-frontend.onrender.com" target="_blank" rel="noopener">📄 Open Resume Builder</a>
+</div>
+</div>
+</header>
+
+<section id="projects">
+<div class="container">
+<div class="section-heading">
+<span>Featured Work</span><h2>Live Projects</h2>
+<p>Explore applications that are currently deployed and accessible online.</p>
+</div>
+<div class="projects">
+
+<article class="project-card">
+<div class="project-number">01</div>
+<div class="project-icon">📄</div>
+<h3>RK Resume Builder</h3>
+<p>A web-based resume building application designed to simplify the process of creating professional resumes through a structured and user-friendly interface.</p>
+<div class="tech-list">
+<span class="tech">Web Application</span><span class="tech">Resume Generation</span><span class="tech">Responsive UI</span><span class="tech">Frontend</span>
+</div>
+<div class="project-actions">
+<a class="btn btn-primary" href="https://rk-resume-builder-frontend.onrender.com" target="_blank" rel="noopener">🚀 Live Demo</a>
+</div>
+</article>
+
+<article class="project-card">
+<div class="project-number">02</div>
+<div class="project-icon">🤖</div>
+<h3>RK AI Assistant</h3>
+<p>A conversational AI web application connected to an RK AI backend. It provides an interactive chat interface for asking questions, explaining programming concepts and working with developer technologies.</p>
+<div class="tech-list">
+<span class="tech">AI</span><span class="tech">Python</span><span class="tech">FastAPI</span><span class="tech">MongoDB</span><span class="tech">Ollama</span><span class="tech">REST API</span>
+</div>
+<div class="project-actions">
+<a class="btn btn-primary" href="https://rkchat-ai.duckdns.org/index.html" target="_blank" rel="noopener">🤖 Try AI Assistant</a>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="details">
+<div class="container">
+<div class="section-heading">
+<span>Project Overview</span><h2>What These Projects Demonstrate</h2>
+<p>These applications represent practical development work across frontend engineering, backend APIs and AI integration.</p>
+</div>
+<div class="detail-grid">
+
+<div class="detail-card">
+<h3>🤖 RK AI Assistant</h3>
+<ul class="feature-list">
+<li>Interactive conversational interface</li>
+<li>New chat and conversation management</li>
+<li>Light / dark theme support</li>
+<li>Quick prompts for developer tasks</li>
+<li>AI backend integration</li>
+<li>Developer-oriented AI assistance</li>
+<li>Live cloud deployment</li>
+</ul>
+</div>
+
+<div class="detail-card">
+<h3>📄 RK Resume Builder</h3>
+<ul class="feature-list">
+<li>Dedicated web application for resume creation</li>
+<li>Structured resume-building workflow</li>
+<li>Professional web interface</li>
+<li>Responsive application design</li>
+<li>Live cloud deployment</li>
+<li>Focused on simplifying resume creation</li>
+</ul>
+</div>
+
+<div class="detail-card">
+<h3>☁️ Deployment</h3>
+<p>The projects demonstrate experience with deploying applications to the cloud and making them accessible through public HTTPS endpoints.</p><br>
+<ul class="feature-list">
+<li>Render deployment</li><li>Oracle Cloud deployment for RK AI Chat</li><li>Custom DuckDNS domain</li><li>HTTPS access</li><li>Publicly accessible applications</li>
+</ul>
+</div>
+
+<div class="detail-card">
+<h3>💡 Engineering Focus</h3>
+<p>The projects combine practical web development with backend engineering and AI capabilities, making them useful examples of end-to-end application development.</p><br>
+<ul class="feature-list">
+<li>Frontend development</li><li>Backend API development</li><li>AI integration</li><li>Cloud deployment</li><li>Oracle Cloud infrastructure</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="technology">
+<div class="container">
+<div class="section-heading">
+<span>Technology</span><h2>Technology &amp; Skills</h2>
+<p>Technologies represented across the two live applications.</p>
+</div>
+<div class="stack">
+<div class="stack-item"><div class="stack-icon">🐍</div><strong>Python</strong><small>Backend / AI</small></div>
+<div class="stack-item"><div class="stack-icon">⚡</div><strong>FastAPI</strong><small>API Development</small></div>
+<div class="stack-item"><div class="stack-icon">🤖</div><strong>AI</strong><small>AI Applications</small></div>
+<div class="stack-item"><div class="stack-icon">🦙</div><strong>Ollama</strong><small>Local AI</small></div>
+<div class="stack-item"><div class="stack-icon">🍃</div><strong>MongoDB</strong><small>Database</small></div>
+<div class="stack-item"><div class="stack-icon">🌐</div><strong>HTML / CSS / JS</strong><small>Frontend</small></div>
+<div class="stack-item"><div class="stack-icon">☁️</div><strong>Cloud</strong><small>Deployment</small></div>
+<div class="stack-item"><div class="stack-icon">🔐</div><strong>HTTPS / APIs</strong><small>Web Services</small></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="cta">
+<h2>Try the Projects</h2>
+<p>Both applications are live and can be accessed directly. Explore the AI assistant or create a resume using the Resume Builder.</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="https://rkchat-ai.duckdns.org/index.html" target="_blank" rel="noopener">🤖 Launch RK AI Assistant</a>
+<a class="btn btn-secondary" href="https://rk-resume-builder-frontend.onrender.com" target="_blank" rel="noopener">📄 Launch Resume Builder</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container"><p>© 2026 <strong>RK Projects</strong> · Designed &amp; Developed by Ricky khatri</p></div>
+</footer>
+
+</body>
+</html>
