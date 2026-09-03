@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RK Projects | AI Assistant, MCP Server & Resume Builder</title>
+<title>RK Projects | AI Assistant, Smart Chat, MCP Server & Resume Builder</title>
 
-<meta name="description" content="Explore RK's live software projects including RK AI Assistant, RK MCP Server and RK Resume Builder.">
+<meta name="description" content="Explore RK's live software projects including RK Smart Chat, RK AI Assistant, RK MCP Server and RK Resume Builder.">
 <meta name="theme-color" content="#0f172a">
 
 <style>
@@ -165,6 +165,18 @@ border-color:#a78bfa;
 transform:translateY(-2px)
 }
 
+.btn-smart{
+background:rgba(14,165,233,.14);
+border-color:rgba(34,211,238,.3);
+color:#67e8f9
+}
+
+.btn-smart:hover{
+background:rgba(14,165,233,.24);
+border-color:#22d3ee;
+transform:translateY(-2px)
+}
+
 section{padding:80px 0}
 
 .section-heading{
@@ -188,13 +200,13 @@ letter-spacing:-1px
 
 .section-heading p{
 color:#94a3b8;
-max-width:650px;
+max-width:700px;
 margin:12px auto 0
 }
 
 .projects{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:24px
 }
 
@@ -357,7 +369,7 @@ margin-bottom:14px
 
 .cta p{
 color:#94a3b8;
-max-width:650px;
+max-width:700px;
 margin:auto
 }
 
@@ -373,14 +385,6 @@ text-align:center
 }
 
 footer strong{color:#94a3b8}
-
-@media(max-width:1000px){
-
-.projects{
-grid-template-columns:1fr 1fr
-}
-
-}
 
 @media(max-width:850px){
 
@@ -463,11 +467,17 @@ Building useful <span class="gradient-text">software with AI</span>
 
 <p>
 A collection of live projects focused on artificial intelligence,
-developer productivity, automation, MCP integrations and practical
-web applications.
+developer productivity, automation, MCP integrations, backend
+engineering and practical web applications.
 </p>
 
 <div class="hero-buttons">
+
+<a class="btn btn-primary"
+href="https://rk-smart-chat.onrender.com/"
+target="_blank"
+rel="noopener">
+💬 Open RK Smart Chat </a>
 
 <a class="btn btn-primary"
 href="https://rkchat-ai.duckdns.org/index.html"
@@ -512,41 +522,42 @@ and accessible online.
 
 <div class="projects">
 
-<!-- Resume Builder -->
+<!-- RK Smart Chat -->
 
 <article class="project-card">
 
 <div class="project-number">01</div>
 
-<div class="project-icon">📄</div>
+<div class="project-icon">💬</div>
 
-<h3>RK Resume Builder</h3>
+<h3>RK Smart Chat</h3>
 
 <p>
-A web-based resume building application designed to simplify
-the process of creating professional resumes through a
-structured and user-friendly interface.
+A Spring Boot and Kotlin-based AI chat application that combines
+backend engineering, database persistence and local LLM integration.
+The application uses Ollama with Llama 3.2 to provide conversational
+AI capabilities through a modern web interface.
 </p>
 
 <div class="tech-list">
 
-<span class="tech">Web Application</span> <span class="tech">Resume Generation</span> <span class="tech">Responsive UI</span> <span class="tech">Frontend</span>
+<span class="tech">Spring Boot</span> <span class="tech">Kotlin</span> <span class="tech">Java</span> <span class="tech">Gradle</span> <span class="tech">JPA</span> <span class="tech">H2</span> <span class="tech">HTML</span> <span class="tech">CSS</span> <span class="tech">JavaScript</span> <span class="tech">Ollama</span> <span class="tech">Llama 3.2</span>
 
 </div>
 
 <div class="project-actions">
 
-<a class="btn btn-primary"
-href="https://rk-resume-builder-frontend.onrender.com"
+<a class="btn btn-smart"
+href="https://rk-smart-chat.onrender.com/"
 target="_blank"
 rel="noopener">
-🚀 Live Demo </a>
+💬 Live Demo </a>
 
 </div>
 
 </article>
 
-<!-- AI Assistant -->
+<!-- RK AI Assistant -->
 
 <article class="project-card">
 
@@ -616,6 +627,40 @@ rel="noopener">
 
 </article>
 
+<!-- Resume Builder -->
+
+<article class="project-card">
+
+<div class="project-number">04</div>
+
+<div class="project-icon">📄</div>
+
+<h3>RK Resume Builder</h3>
+
+<p>
+A web-based resume building application designed to simplify
+the process of creating professional resumes through a
+structured and user-friendly interface.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Web Application</span> <span class="tech">Resume Generation</span> <span class="tech">Responsive UI</span> <span class="tech">Frontend</span>
+
+</div>
+
+<div class="project-actions">
+
+<a class="btn btn-primary"
+href="https://rk-resume-builder-frontend.onrender.com"
+target="_blank"
+rel="noopener">
+🚀 Live Demo </a>
+
+</div>
+
+</article>
+
 </div>
 
 </div>
@@ -634,13 +679,35 @@ rel="noopener">
 
 <p>
 These applications represent practical development work across
-frontend engineering, backend APIs, AI integration and modern
-AI agent infrastructure.
+frontend engineering, backend APIs, database persistence,
+AI integration, cloud deployment and modern AI infrastructure.
 </p>
 
 </div>
 
 <div class="detail-grid">
+
+<!-- Smart Chat -->
+
+<div class="detail-card">
+
+<h3>💬 RK Smart Chat</h3>
+
+<ul class="feature-list">
+
+<li>Spring Boot backend architecture</li>
+<li>Kotlin and Java development</li>
+<li>Gradle build automation</li>
+<li>JPA database integration</li>
+<li>H2 relational database</li>
+<li>HTML, CSS and JavaScript frontend</li>
+<li>Ollama AI integration</li>
+<li>Llama 3.2 language model</li>
+<li>Live Render deployment</li>
+
+</ul>
+
+</div>
 
 <!-- AI Assistant -->
 
@@ -657,25 +724,6 @@ AI agent infrastructure.
 <li>AI backend integration</li>
 <li>Developer-oriented AI assistance</li>
 <li>Live cloud deployment</li>
-
-</ul>
-
-</div>
-
-<!-- Resume Builder -->
-
-<div class="detail-card">
-
-<h3>📄 RK Resume Builder</h3>
-
-<ul class="feature-list">
-
-<li>Dedicated web application for resume creation</li>
-<li>Structured resume-building workflow</li>
-<li>Professional web interface</li>
-<li>Responsive application design</li>
-<li>Live cloud deployment</li>
-<li>Focused on simplifying resume creation</li>
 
 </ul>
 
@@ -701,6 +749,25 @@ AI agent infrastructure.
 
 </div>
 
+<!-- Resume Builder -->
+
+<div class="detail-card">
+
+<h3>📄 RK Resume Builder</h3>
+
+<ul class="feature-list">
+
+<li>Dedicated web application for resume creation</li>
+<li>Structured resume-building workflow</li>
+<li>Professional web interface</li>
+<li>Responsive application design</li>
+<li>Live cloud deployment</li>
+<li>Focused on simplifying resume creation</li>
+
+</ul>
+
+</div>
+
 <!-- Deployment -->
 
 <div class="detail-card">
@@ -708,9 +775,9 @@ AI agent infrastructure.
 <h3>☁️ Deployment</h3>
 
 <p>
-The projects demonstrate experience with deploying applications
-and backend services to the cloud and making them accessible
-through public HTTPS endpoints.
+The projects demonstrate experience with deploying frontend
+applications, backend APIs and AI-enabled services to cloud
+environments with publicly accessible HTTPS endpoints.
 </p>
 
 <br>
@@ -736,8 +803,8 @@ through public HTTPS endpoints.
 
 <p>
 The projects combine practical web development with backend
-engineering, AI capabilities and modern Model Context Protocol
-integration.
+engineering, relational database development, AI capabilities
+and modern Model Context Protocol integration.
 </p>
 
 <br>
@@ -745,12 +812,13 @@ integration.
 <ul class="feature-list">
 
 <li>Frontend development</li>
-<li>Backend API development</li>
+<li>Spring Boot development</li>
+<li>Kotlin and Java</li>
+<li>REST API development</li>
+<li>Database persistence with JPA</li>
 <li>AI integration</li>
 <li>MCP server development</li>
-<li>FastMCP</li>
 <li>Cloud deployment</li>
-<li>Oracle Cloud infrastructure</li>
 
 </ul>
 
@@ -763,21 +831,50 @@ integration.
 <h3>🧠 AI Infrastructure</h3>
 
 <p>
-The RK AI ecosystem combines conversational AI with backend
-services and an MCP server, providing a foundation for connecting
-AI systems with external tools and application capabilities.
+The RK AI ecosystem combines conversational applications,
+local LLM inference, backend services and MCP infrastructure
+to create a connected platform for AI-powered development.
 </p>
 
 <br>
 
 <ul class="feature-list">
 
-<li>AI-powered applications</li>
-<li>Local AI with Ollama</li>
+<li>Ollama integration</li>
+<li>Llama 3.2</li>
 <li>FastAPI services</li>
+<li>Spring Boot AI application</li>
 <li>FastMCP integration</li>
 <li>Model Context Protocol</li>
 <li>Developer tooling</li>
+
+</ul>
+
+</div>
+
+<!-- Database & Backend -->
+
+<div class="detail-card">
+
+<h3>🗄️ Backend &amp; Database</h3>
+
+<p>
+RK Smart Chat demonstrates backend application development
+using the JVM ecosystem with Kotlin and Java, together with
+database persistence and Gradle-based project management.
+</p>
+
+<br>
+
+<ul class="feature-list">
+
+<li>Spring Boot</li>
+<li>Kotlin</li>
+<li>Java</li>
+<li>Gradle</li>
+<li>JPA / Hibernate</li>
+<li>H2 Database</li>
+<li>REST APIs</li>
 
 </ul>
 
@@ -800,13 +897,49 @@ AI systems with external tools and application capabilities.
 <h2>Technology &amp; Skills</h2>
 
 <p>
-Technologies represented across the live applications and
-backend services.
+Technologies represented across the live applications,
+AI services and backend projects.
 </p>
 
 </div>
 
 <div class="stack">
+
+<div class="stack-item">
+<div class="stack-icon">☕</div>
+<strong>Java</strong>
+<small>Backend Development</small>
+</div>
+
+<div class="stack-item">
+<div class="stack-icon">🟣</div>
+<strong>Kotlin</strong>
+<small>JVM Development</small>
+</div>
+
+<div class="stack-item">
+<div class="stack-icon">🍃</div>
+<strong>Spring Boot</strong>
+<small>Backend Framework</small>
+</div>
+
+<div class="stack-item">
+<div class="stack-icon">🐘</div>
+<strong>Gradle</strong>
+<small>Build Automation</small>
+</div>
+
+<div class="stack-item">
+<div class="stack-icon">🗄️</div>
+<strong>JPA</strong>
+<small>Persistence</small>
+</div>
+
+<div class="stack-item">
+<div class="stack-icon">💾</div>
+<strong>H2</strong>
+<small>Database</small>
+</div>
 
 <div class="stack-item">
 <div class="stack-icon">🐍</div>
@@ -834,14 +967,14 @@ backend services.
 
 <div class="stack-item">
 <div class="stack-icon">🤖</div>
-<strong>AI</strong>
-<small>AI Applications</small>
+<strong>Ollama</strong>
+<small>Local AI</small>
 </div>
 
 <div class="stack-item">
 <div class="stack-icon">🦙</div>
-<strong>Ollama</strong>
-<small>Local AI</small>
+<strong>Llama 3.2</strong>
+<small>Language Model</small>
 </div>
 
 <div class="stack-item">
@@ -895,11 +1028,18 @@ backend services.
 <h2>Try the Projects</h2>
 
 <p>
-Explore the RK AI Assistant, connect with the RK MCP Server,
-or create a professional resume using the Resume Builder.
+Explore RK Smart Chat, interact with the RK AI Assistant,
+connect with the RK MCP Server, or create a professional
+resume using the Resume Builder.
 </p>
 
 <div class="hero-buttons">
+
+<a class="btn btn-smart"
+href="https://rk-smart-chat.onrender.com/"
+target="_blank"
+rel="noopener">
+💬 Launch RK Smart Chat </a>
 
 <a class="btn btn-primary"
 href="https://rkchat-ai.duckdns.org/index.html"
