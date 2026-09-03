@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RK Projects | AI Assistant, Smart Chat, MCP Server & Resume Builder</title>
+<title>RK Projects | AI Assistant, Smart Chat, API, MCP Server & Resume Builder</title>
 
-<meta name="description" content="Explore RK's live software projects including RK Smart Chat, RK AI Assistant, RK MCP Server and RK Resume Builder.">
+<meta name="description" content="Explore RK's live software projects including RK Smart Chat, RK AI Assistant, RK AI API, RK MCP Server and RK Resume Builder.">
 <meta name="theme-color" content="#0f172a">
 
 <style>
@@ -58,9 +58,9 @@ letter-spacing:-.5px
 
 .nav-links{
 display:flex;
-gap:28px;
+gap:24px;
 list-style:none;
-font-size:.95rem;
+font-size:.92rem;
 color:#cbd5e1
 }
 
@@ -108,7 +108,7 @@ background:linear-gradient(90deg,#60a5fa,#a78bfa,#22d3ee);
 }
 
 .hero p{
-max-width:720px;
+max-width:760px;
 margin:auto;
 font-size:1.12rem;
 color:#94a3b8
@@ -177,6 +177,18 @@ border-color:#22d3ee;
 transform:translateY(-2px)
 }
 
+.btn-api{
+background:rgba(16,185,129,.12);
+border-color:rgba(52,211,153,.3);
+color:#6ee7b7
+}
+
+.btn-api:hover{
+background:rgba(16,185,129,.22);
+border-color:#34d399;
+transform:translateY(-2px)
+}
+
 section{padding:80px 0}
 
 .section-heading{
@@ -200,7 +212,7 @@ letter-spacing:-1px
 
 .section-heading p{
 color:#94a3b8;
-max-width:700px;
+max-width:760px;
 margin:12px auto 0
 }
 
@@ -321,6 +333,21 @@ color:#60a5fa;
 font-weight:800
 }
 
+.api-box{
+margin-top:20px;
+padding:18px;
+border-radius:12px;
+background:rgba(2,6,23,.65);
+border:1px solid rgba(52,211,153,.18);
+overflow:auto
+}
+
+.api-box code{
+color:#6ee7b7;
+font-family:"SFMono-Regular",Consolas,monospace;
+font-size:.85rem
+}
+
 .stack{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -369,7 +396,7 @@ margin-bottom:14px
 
 .cta p{
 color:#94a3b8;
-max-width:700px;
+max-width:760px;
 margin:auto
 }
 
@@ -442,6 +469,7 @@ letter-spacing:-2px
 <ul class="nav-links">
 
 <li><a href="#projects">Projects</a></li>
+<li><a href="#api">API</a></li>
 <li><a href="#details">Details</a></li>
 <li><a href="#technology">Technology</a></li>
 <li><a href="#contact">Live Projects</a></li>
@@ -458,7 +486,7 @@ letter-spacing:-2px
 
 <div class="badge">
 <span class="status-dot"></span>
-Live Projects
+Live Projects & AI Services
 </div>
 
 <h1>
@@ -467,14 +495,14 @@ Building useful <span class="gradient-text">software with AI</span>
 
 <p>
 A collection of live projects focused on artificial intelligence,
-developer productivity, automation, MCP integrations, backend
-engineering and practical web applications.
+developer productivity, automation, REST APIs, MCP integrations,
+backend engineering, cloud deployment and practical web applications.
 </p>
 
 <div class="hero-buttons">
 
-<a class="btn btn-primary"
-href="https://rk-smart-chat.onrender.com/"
+<a class="btn btn-smart"
+href="https://rksmartchat.onrender.com/"
 target="_blank"
 rel="noopener">
 💬 Open RK Smart Chat </a>
@@ -484,6 +512,12 @@ href="https://rkchat-ai.duckdns.org/index.html"
 target="_blank"
 rel="noopener">
 🤖 Open RK AI Assistant </a>
+
+<a class="btn btn-api"
+href="https://rkchat-ai.duckdns.org/docs"
+target="_blank"
+rel="noopener">
+📚 Open API Swagger </a>
 
 <a class="btn btn-mcp"
 href="https://rkchat-ai.duckdns.org/mcp"
@@ -514,8 +548,8 @@ rel="noopener">
 <h2>Live Projects</h2>
 
 <p>
-Explore applications and services that are currently deployed
-and accessible online.
+Explore applications, APIs and AI services that are currently
+deployed and accessible online.
 </p>
 
 </div>
@@ -548,7 +582,7 @@ AI capabilities through a modern web interface.
 <div class="project-actions">
 
 <a class="btn btn-smart"
-href="https://rk-smart-chat.onrender.com/"
+href="https://rksmartchat.onrender.com/"
 target="_blank"
 rel="noopener">
 💬 Live Demo </a>
@@ -569,14 +603,14 @@ rel="noopener">
 
 <p>
 A conversational AI web application connected to an RK AI backend.
-It provides an interactive chat interface for asking questions,
+It provides an interactive interface for asking questions,
 explaining programming concepts and working with developer
 technologies.
 </p>
 
 <div class="tech-list">
 
-<span class="tech">AI</span> <span class="tech">Python</span> <span class="tech">FastAPI</span> <span class="tech">MongoDB</span> <span class="tech">Ollama</span> <span class="tech">REST API</span>
+<span class="tech">AI</span> <span class="tech">Python</span> <span class="tech">FastAPI</span> <span class="tech">MongoDB</span> <span class="tech">Ollama</span> <span class="tech">REST API</span> <span class="tech">Cloud</span>
 
 </div>
 
@@ -588,6 +622,59 @@ target="_blank"
 rel="noopener">
 🤖 Try AI Assistant </a>
 
+<a class="btn btn-api"
+href="https://rkchat-ai.duckdns.org/docs"
+target="_blank"
+rel="noopener">
+📚 API Docs </a>
+
+</div>
+
+</article>
+
+<!-- RK AI API -->
+
+<article class="project-card" id="api">
+
+<div class="project-number">03</div>
+
+<div class="project-icon">⚡</div>
+
+<h3>RK AI REST API</h3>
+
+<p>
+A FastAPI-powered backend service that exposes the RK AI capabilities
+through a web API. The service provides an interactive Swagger UI
+for exploring and testing the available API functionality.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Python</span> <span class="tech">FastAPI</span> <span class="tech">REST API</span> <span class="tech">OpenAPI</span> <span class="tech">Swagger UI</span> <span class="tech">MongoDB</span> <span class="tech">AI Backend</span>
+
+</div>
+
+<div class="api-box">
+<code>
+API Documentation → /docs<br>
+Base Service → rkchat-ai.duckdns.org
+</code>
+</div>
+
+<div class="project-actions">
+
+<a class="btn btn-api"
+href="https://rkchat-ai.duckdns.org/docs"
+target="_blank"
+rel="noopener">
+📚 Open Swagger UI </a>
+
+<a class="btn btn-secondary"
+href="https://rkchat-ai.duckdns.org/index.html"
+target="_blank"
+rel="noopener">
+🤖 Open AI App </a>
+
 </div>
 
 </article>
@@ -596,7 +683,7 @@ rel="noopener">
 
 <article class="project-card">
 
-<div class="project-number">03</div>
+<div class="project-number">04</div>
 
 <div class="project-icon">🔌</div>
 
@@ -631,7 +718,7 @@ rel="noopener">
 
 <article class="project-card">
 
-<div class="project-number">04</div>
+<div class="project-number">05</div>
 
 <div class="project-icon">📄</div>
 
@@ -661,6 +748,52 @@ rel="noopener">
 
 </article>
 
+<!-- AI Ecosystem -->
+
+<article class="project-card">
+
+<div class="project-number">06</div>
+
+<div class="project-icon">🧠</div>
+
+<h3>RK AI Ecosystem</h3>
+
+<p>
+An interconnected AI development ecosystem combining a conversational
+web application, FastAPI backend services, local LLM integration,
+REST APIs and Model Context Protocol infrastructure.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">AI</span> <span class="tech">FastAPI</span> <span class="tech">Ollama</span> <span class="tech">Llama 3.2</span> <span class="tech">MCP</span> <span class="tech">MongoDB</span> <span class="tech">REST</span> <span class="tech">Cloud</span>
+
+</div>
+
+<div class="project-actions">
+
+<a class="btn btn-primary"
+href="https://rkchat-ai.duckdns.org/index.html"
+target="_blank"
+rel="noopener">
+🤖 AI Assistant </a>
+
+<a class="btn btn-api"
+href="https://rkchat-ai.duckdns.org/docs"
+target="_blank"
+rel="noopener">
+📚 API </a>
+
+<a class="btn btn-mcp"
+href="https://rkchat-ai.duckdns.org/mcp"
+target="_blank"
+rel="noopener">
+🔌 MCP </a>
+
+</div>
+
+</article>
+
 </div>
 
 </div>
@@ -680,7 +813,7 @@ rel="noopener">
 <p>
 These applications represent practical development work across
 frontend engineering, backend APIs, database persistence,
-AI integration, cloud deployment and modern AI infrastructure.
+AI integration, REST services, MCP infrastructure and cloud deployment.
 </p>
 
 </div>
@@ -723,9 +856,40 @@ AI integration, cloud deployment and modern AI infrastructure.
 <li>Quick prompts for developer tasks</li>
 <li>AI backend integration</li>
 <li>Developer-oriented AI assistance</li>
+<li>FastAPI backend services</li>
 <li>Live cloud deployment</li>
 
 </ul>
+
+</div>
+
+<!-- REST API -->
+
+<div class="detail-card">
+
+<h3>⚡ RK AI REST API</h3>
+
+<ul class="feature-list">
+
+<li>Python-based backend service</li>
+<li>FastAPI framework</li>
+<li>REST API architecture</li>
+<li>OpenAPI API specification</li>
+<li>Interactive Swagger UI</li>
+<li>API endpoint exploration</li>
+<li>Backend AI integration</li>
+<li>MongoDB integration</li>
+<li>HTTPS API access</li>
+
+</ul>
+
+<br>
+
+<a class="btn btn-api"
+href="https://rkchat-ai.duckdns.org/docs"
+target="_blank"
+rel="noopener">
+📚 Explore Swagger Documentation </a>
 
 </div>
 
@@ -768,6 +932,35 @@ AI integration, cloud deployment and modern AI infrastructure.
 
 </div>
 
+<!-- API Architecture -->
+
+<div class="detail-card">
+
+<h3>🌐 API Architecture</h3>
+
+<p>
+The RK AI platform exposes backend capabilities through a
+FastAPI-based REST service. The API is documented through
+OpenAPI and provides an interactive Swagger interface for
+developers to inspect and test the service.
+</p>
+
+<br>
+
+<ul class="feature-list">
+
+<li>FastAPI application</li>
+<li>RESTful backend architecture</li>
+<li>OpenAPI documentation</li>
+<li>Swagger UI</li>
+<li>HTTPS endpoint</li>
+<li>AI service integration</li>
+<li>Database-backed services</li>
+
+</ul>
+
+</div>
+
 <!-- Deployment -->
 
 <div class="detail-card">
@@ -789,6 +982,8 @@ environments with publicly accessible HTTPS endpoints.
 <li>Custom DuckDNS domain</li>
 <li>HTTPS access</li>
 <li>Publicly accessible applications</li>
+<li>Live REST API</li>
+<li>Live Swagger documentation</li>
 <li>Live MCP endpoint</li>
 
 </ul>
@@ -803,8 +998,8 @@ environments with publicly accessible HTTPS endpoints.
 
 <p>
 The projects combine practical web development with backend
-engineering, relational database development, AI capabilities
-and modern Model Context Protocol integration.
+engineering, relational database development, AI capabilities,
+REST API development and modern Model Context Protocol integration.
 </p>
 
 <br>
@@ -814,8 +1009,9 @@ and modern Model Context Protocol integration.
 <li>Frontend development</li>
 <li>Spring Boot development</li>
 <li>Kotlin and Java</li>
+<li>Python backend development</li>
 <li>REST API development</li>
-<li>Database persistence with JPA</li>
+<li>Database persistence</li>
 <li>AI integration</li>
 <li>MCP server development</li>
 <li>Cloud deployment</li>
@@ -832,8 +1028,8 @@ and modern Model Context Protocol integration.
 
 <p>
 The RK AI ecosystem combines conversational applications,
-local LLM inference, backend services and MCP infrastructure
-to create a connected platform for AI-powered development.
+local LLM inference, backend services, REST APIs and MCP
+infrastructure to create a connected platform for AI-powered development.
 </p>
 
 <br>
@@ -846,6 +1042,7 @@ to create a connected platform for AI-powered development.
 <li>Spring Boot AI application</li>
 <li>FastMCP integration</li>
 <li>Model Context Protocol</li>
+<li>REST APIs</li>
 <li>Developer tooling</li>
 
 </ul>
@@ -859,9 +1056,9 @@ to create a connected platform for AI-powered development.
 <h3>🗄️ Backend &amp; Database</h3>
 
 <p>
-RK Smart Chat demonstrates backend application development
-using the JVM ecosystem with Kotlin and Java, together with
-database persistence and Gradle-based project management.
+The RK projects demonstrate backend application development
+across the JVM and Python ecosystems, together with relational
+and document database technologies.
 </p>
 
 <br>
@@ -871,9 +1068,12 @@ database persistence and Gradle-based project management.
 <li>Spring Boot</li>
 <li>Kotlin</li>
 <li>Java</li>
+<li>Python</li>
+<li>FastAPI</li>
 <li>Gradle</li>
 <li>JPA / Hibernate</li>
 <li>H2 Database</li>
+<li>MongoDB</li>
 <li>REST APIs</li>
 
 </ul>
@@ -898,7 +1098,7 @@ database persistence and Gradle-based project management.
 
 <p>
 Technologies represented across the live applications,
-AI services and backend projects.
+AI services, REST APIs and backend projects.
 </p>
 
 </div>
@@ -951,6 +1151,18 @@ AI services and backend projects.
 <div class="stack-icon">⚡</div>
 <strong>FastAPI</strong>
 <small>API Development</small>
+</div>
+
+<div class="stack-item">
+<div class="stack-icon">📚</div>
+<strong>OpenAPI</strong>
+<small>API Specification</small>
+</div>
+
+<div class="stack-item">
+<div class="stack-icon">📖</div>
+<strong>Swagger UI</strong>
+<small>API Documentation</small>
 </div>
 
 <div class="stack-item">
@@ -1025,18 +1237,18 @@ AI services and backend projects.
 
 <div class="cta">
 
-<h2>Try the Projects</h2>
+<h2>Explore the RK AI Ecosystem</h2>
 
 <p>
-Explore RK Smart Chat, interact with the RK AI Assistant,
-connect with the RK MCP Server, or create a professional
-resume using the Resume Builder.
+Try the live applications, explore the FastAPI Swagger documentation,
+connect with the MCP server, or create a professional resume using
+the Resume Builder.
 </p>
 
 <div class="hero-buttons">
 
 <a class="btn btn-smart"
-href="https://rk-smart-chat.onrender.com/"
+href="https://rksmartchat.onrender.com/"
 target="_blank"
 rel="noopener">
 💬 Launch RK Smart Chat </a>
@@ -1046,6 +1258,12 @@ href="https://rkchat-ai.duckdns.org/index.html"
 target="_blank"
 rel="noopener">
 🤖 Launch RK AI Assistant </a>
+
+<a class="btn btn-api"
+href="https://rkchat-ai.duckdns.org/docs"
+target="_blank"
+rel="noopener">
+📚 Explore API Docs </a>
 
 <a class="btn btn-mcp"
 href="https://rkchat-ai.duckdns.org/mcp"
@@ -1081,4 +1299,5 @@ rel="noopener">
 </footer>
 
 </body>
+
 </html>
