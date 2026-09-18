@@ -1,1303 +1,1777 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>RK Projects | AI Assistant, Smart Chat, API, MCP Server & Resume Builder</title>
-
-<meta name="description" content="Explore RK's live software projects including RK Smart Chat, RK AI Assistant, RK AI API, RK MCP Server and RK Resume Builder.">
-<meta name="theme-color" content="#0f172a">
-
-<style>
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:
-radial-gradient(circle at top left,#172554 0,transparent 35%),
-radial-gradient(circle at top right,#312e81 0,transparent 30%),
-#020617;
-color:#e2e8f0;
-line-height:1.7;
-min-height:100vh
-}
-
-a{color:inherit;text-decoration:none}
-
-.container{width:min(1180px,92%);margin:auto}
-
-nav{
-position:sticky;
-top:0;
-z-index:1000;
-backdrop-filter:blur(18px);
-background:rgba(2,6,23,.72);
-border-bottom:1px solid rgba(148,163,184,.12)
-}
-
-.nav-inner{
-height:72px;
-display:flex;
-align-items:center;
-justify-content:space-between
-}
-
-.logo{
-font-size:1.35rem;
-font-weight:800;
-letter-spacing:-.5px
-}
-
-.logo span{color:#60a5fa}
-
-.nav-links{
-display:flex;
-gap:24px;
-list-style:none;
-font-size:.92rem;
-color:#cbd5e1
-}
-
-.nav-links a{transition:.25s}
-
-.nav-links a:hover{color:#60a5fa}
-
-.hero{
-padding:110px 0 90px;
-text-align:center
-}
-
-.badge{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:7px 15px;
-border-radius:999px;
-background:rgba(59,130,246,.1);
-border:1px solid rgba(96,165,250,.25);
-color:#93c5fd;
-font-size:.85rem;
-margin-bottom:24px
-}
-
-.status-dot{
-width:8px;
-height:8px;
-background:#22c55e;
-border-radius:50%;
-box-shadow:0 0 12px #22c55e
-}
-
-.hero h1{
-font-size:clamp(2.6rem,7vw,5rem);
-line-height:1.05;
-letter-spacing:-3px;
-margin-bottom:24px
-}
-
-.gradient-text{
-background:linear-gradient(90deg,#60a5fa,#a78bfa,#22d3ee);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent
-}
-
-.hero p{
-max-width:760px;
-margin:auto;
-font-size:1.12rem;
-color:#94a3b8
-}
-
-.hero-buttons{
-margin-top:34px;
-display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap
-}
-
-.btn{
-padding:13px 22px;
-border-radius:10px;
-font-weight:700;
-font-size:.95rem;
-transition:.25s;
-border:1px solid transparent;
-display:inline-block
-}
-
-.btn-primary{
-background:#2563eb;
-color:white
-}
-
-.btn-primary:hover{
-background:#3b82f6;
-transform:translateY(-2px)
-}
-
-.btn-secondary{
-background:rgba(15,23,42,.8);
-border-color:#334155;
-color:#cbd5e1
-}
-
-.btn-secondary:hover{
-border-color:#60a5fa;
-color:white
-}
-
-.btn-mcp{
-background:rgba(124,58,237,.15);
-border-color:rgba(167,139,250,.35);
-color:#c4b5fd
-}
-
-.btn-mcp:hover{
-background:rgba(124,58,237,.25);
-border-color:#a78bfa;
-transform:translateY(-2px)
-}
-
-.btn-smart{
-background:rgba(14,165,233,.14);
-border-color:rgba(34,211,238,.3);
-color:#67e8f9
-}
-
-.btn-smart:hover{
-background:rgba(14,165,233,.24);
-border-color:#22d3ee;
-transform:translateY(-2px)
-}
-
-.btn-api{
-background:rgba(16,185,129,.12);
-border-color:rgba(52,211,153,.3);
-color:#6ee7b7
-}
-
-.btn-api:hover{
-background:rgba(16,185,129,.22);
-border-color:#34d399;
-transform:translateY(-2px)
-}
-
-section{padding:80px 0}
-
-.section-heading{
-text-align:center;
-margin-bottom:48px
-}
-
-.section-heading span{
-color:#60a5fa;
-font-size:.85rem;
-font-weight:800;
-text-transform:uppercase;
-letter-spacing:2px
-}
-
-.section-heading h2{
-font-size:clamp(2rem,5vw,3rem);
-margin-top:8px;
-letter-spacing:-1px
-}
-
-.section-heading p{
-color:#94a3b8;
-max-width:760px;
-margin:12px auto 0
-}
-
-.projects{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:24px
-}
-
-.project-card{
-position:relative;
-overflow:hidden;
-background:linear-gradient(145deg,rgba(15,23,42,.95),rgba(15,23,42,.65));
-border:1px solid rgba(148,163,184,.15);
-border-radius:22px;
-padding:30px;
-transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease
-}
-
-.project-card:hover{
-transform:translateY(-8px);
-border-color:rgba(96,165,250,.45);
-box-shadow:0 25px 70px rgba(0,0,0,.35)
-}
-
-.project-number{
-position:absolute;
-top:18px;
-right:24px;
-font-size:4rem;
-font-weight:900;
-color:rgba(255,255,255,.035)
-}
-
-.project-icon{
-width:60px;
-height:60px;
-display:grid;
-place-items:center;
-font-size:1.8rem;
-border-radius:16px;
-background:rgba(59,130,246,.12);
-border:1px solid rgba(96,165,250,.2);
-margin-bottom:22px
-}
-
-.project-card h3{
-font-size:1.5rem;
-margin-bottom:12px
-}
-
-.project-card>p{
-color:#94a3b8;
-margin-bottom:22px
-}
-
-.tech-list{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:25px
-}
-
-.tech{
-padding:5px 10px;
-border-radius:7px;
-background:rgba(30,41,59,.8);
-border:1px solid #334155;
-color:#cbd5e1;
-font-size:.78rem
-}
-
-.project-actions{
-display:flex;
-gap:10px;
-flex-wrap:wrap
-}
-
-.detail-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:24px
-}
-
-.detail-card{
-background:rgba(15,23,42,.7);
-border:1px solid rgba(148,163,184,.13);
-border-radius:18px;
-padding:28px
-}
-
-.detail-card h3{
-margin-bottom:15px;
-color:#f8fafc
-}
-
-.detail-card p{
-color:#94a3b8
-}
-
-.feature-list{
-list-style:none;
-display:grid;
-gap:12px
-}
-
-.feature-list li{
-color:#cbd5e1;
-padding-left:26px;
-position:relative
-}
-
-.feature-list li::before{
-content:"✓";
-position:absolute;
-left:0;
-color:#60a5fa;
-font-weight:800
-}
-
-.api-box{
-margin-top:20px;
-padding:18px;
-border-radius:12px;
-background:rgba(2,6,23,.65);
-border:1px solid rgba(52,211,153,.18);
-overflow:auto
-}
-
-.api-box code{
-color:#6ee7b7;
-font-family:"SFMono-Regular",Consolas,monospace;
-font-size:.85rem
-}
-
-.stack{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px
-}
-
-.stack-item{
-padding:22px;
-text-align:center;
-background:rgba(15,23,42,.7);
-border:1px solid rgba(148,163,184,.12);
-border-radius:14px;
-transition:.25s
-}
-
-.stack-item:hover{
-transform:translateY(-4px);
-border-color:#475569
-}
-
-.stack-icon{
-font-size:1.8rem;
-margin-bottom:8px
-}
-
-.stack-item strong{
-display:block
-}
-
-.stack-item small{
-color:#64748b
-}
-
-.cta{
-text-align:center;
-padding:70px 30px;
-border-radius:24px;
-background:radial-gradient(circle at center,rgba(37,99,235,.22),transparent 65%);
-border:1px solid rgba(96,165,250,.15)
-}
-
-.cta h2{
-font-size:clamp(2rem,5vw,3rem);
-margin-bottom:14px
-}
-
-.cta p{
-color:#94a3b8;
-max-width:760px;
-margin:auto
-}
-
-.cta .hero-buttons{
-margin-top:25px
-}
-
-footer{
-border-top:1px solid rgba(148,163,184,.1);
-padding:30px 0;
-color:#64748b;
-text-align:center
-}
-
-footer strong{color:#94a3b8}
-
-@media(max-width:850px){
-
-.projects,
-.detail-grid{
-grid-template-columns:1fr
-}
-
-.stack{
-grid-template-columns:repeat(2,1fr)
-}
-
-.nav-links{
-display:none
-}
-
-.hero{
-padding-top:80px
-}
-
-}
-
-@media(max-width:500px){
-
-section{
-padding:60px 0
-}
-
-.project-card{
-padding:24px
-}
-
-.stack{
-grid-template-columns:1fr 1fr
-}
-
-.hero h1{
-letter-spacing:-2px
-}
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RK Projects | Ricky Khatri</title>
+
+<meta
+ name="description"
+ content="RK Projects — AI, full-stack, backend, API, MCP and business application projects by Ricky Khatri."
+/>
+
+  <meta name="author" content="Ricky Khatri" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --bg-soft: #0b1120;
+      --card: rgba(15, 23, 42, 0.72);
+      --card-hover: rgba(20, 30, 52, 0.9);
+      --border: rgba(148, 163, 184, 0.16);
+      --border-hover: rgba(96, 165, 250, 0.45);
+
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --muted-light: #cbd5e1;
+
+      --blue: #60a5fa;
+      --blue-dark: #2563eb;
+      --cyan: #22d3ee;
+      --purple: #a78bfa;
+      --green: #34d399;
+      --orange: #fb923c;
+      --pink: #f472b6;
+
+      --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.14), transparent 30%),
+        radial-gradient(circle at 90% 15%, rgba(167, 139, 250, 0.12), transparent 28%),
+        radial-gradient(circle at 50% 90%, rgba(34, 211, 238, 0.08), transparent 30%),
+        var(--bg);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(7, 11, 20, 0.72);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, var(--blue-dark), var(--purple));
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+      font-size: 15px;
+    }
+
+    .brand-text {
+      font-size: 17px;
+    }
+
+    .brand-text span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding: 9px 13px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(148, 163, 184, 0.08);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      padding: 90px 0 70px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(96, 165, 250, 0.2);
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      color: #93c5fd;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 14px var(--green);
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      margin-bottom: 26px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        110deg,
+        #fff 10%,
+        #93c5fd 42%,
+        #a78bfa 72%,
+        #67e8f9
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 11px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 700;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-dark), #4f46e5);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.38);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.65);
+      border-color: var(--border);
+      color: var(--muted-light);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--border-hover);
+      color: var(--text);
+      background: rgba(30, 41, 59, 0.7);
+    }
+
+    .github-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* STATS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 55px;
+    }
+
+    .stat {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.48);
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-number {
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* PROJECT GRID */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.84),
+          rgba(9, 14, 26, 0.75)
+        );
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.16);
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      right: -80px;
+      top: -80px;
+      border-radius: 50%;
+      background: var(--accent, var(--blue));
+      opacity: 0.08;
+      filter: blur(10px);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      background: var(--card-hover);
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      padding: 34px;
+      border-color: rgba(96, 165, 250, 0.25);
+      background:
+        radial-gradient(
+          circle at 100% 0%,
+          rgba(37, 99, 235, 0.12),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.92),
+          rgba(9, 14, 26, 0.82)
+        );
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .project-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(96, 165, 250, 0.09);
+      border: 1px solid rgba(96, 165, 250, 0.15);
+      font-size: 24px;
+    }
+
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.08);
+      color: #6ee7b7;
+      border: 1px solid rgba(52, 211, 153, 0.13);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .project-card h3 {
+      font-size: 23px;
+      letter-spacing: -0.035em;
+      margin-bottom: 9px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 22px;
+    }
+
+    .tech {
+      padding: 5px 9px;
+      border-radius: 7px;
+      background: rgba(148, 163, 184, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      color: #b8c5d6;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .project-actions .btn {
+      min-height: 40px;
+      padding: 0 14px;
+      font-size: 12px;
+    }
+
+    /* FEATURED FUEL */
+
+    .fuel-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .fuel-copy h3 {
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      margin-bottom: 18px;
+    }
+
+    .fuel-copy > p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-bottom: 28px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted-light);
+      font-size: 14px;
+    }
+
+    .feature-check {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      background: rgba(52, 211, 153, 0.1);
+      color: var(--green);
+      font-size: 11px;
+      margin-top: 1px;
+    }
+
+    /* RECEIPT */
+
+    .receipt-wrap {
+      position: relative;
+    }
+
+    .receipt-glow {
+      position: absolute;
+      inset: 15% -10%;
+      background: linear-gradient(
+        120deg,
+        rgba(37, 99, 235, 0.22),
+        rgba(167, 139, 250, 0.2)
+      );
+      filter: blur(55px);
+      z-index: -1;
+    }
+
+    .receipt {
+      color: #172033;
+      background: #f7f4ea;
+      border-radius: 5px;
+      padding: 25px;
+      box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+      transform: rotate(1.2deg);
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .receipt-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 13px;
+      border-bottom: 2px dashed #727272;
+    }
+
+    .receipt-logo {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #333;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .receipt-title {
+      text-align: center;
+      flex: 1;
+    }
+
+    .receipt-title strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .receipt-title span {
+      font-size: 8px;
+    }
+
+    .receipt-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      padding: 13px 0;
+      border-bottom: 1px solid #aaa;
+      font-size: 8px;
+    }
+
+    .receipt-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #aaa;
+      font-size: 8px;
+    }
+
+    .receipt-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 13px;
+      padding-top: 13px;
+      border-top: 2px solid #222;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .receipt-sign {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8px;
+    }
+
+    /* CAPABILITIES */
+
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .capability {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.5);
+      transition: 0.25s ease;
+    }
+
+    .capability:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .capability-icon {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .capability h4 {
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .capability p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* TECHNOLOGY */
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .stack-item {
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.62);
+      color: var(--muted-light);
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .stack-item:hover {
+      color: var(--text);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    /* CTA */
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 75px 30px;
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      border-radius: 30px;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(96, 165, 250, 0.15),
+          transparent 50%
+        ),
+        rgba(15, 23, 42, 0.55);
+    }
+
+    .cta h2 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 27px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0 45px;
+      border-top: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-copy strong {
+      color: var(--muted-light);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: reveal 0.75s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.08s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.16s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.24s;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured {
+        grid-column: span 1;
+      }
+
+      .fuel-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .capabilities {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 0 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 14vw, 65px);
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading p {
+        margin-top: 13px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project-card,
+      .project-card.featured {
+        padding: 22px;
+      }
+
+      .capabilities {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .project-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .project-actions .btn {
+        width: 100%;
+      }
+
+      .receipt {
+        padding: 18px;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
 
-<nav>
+  <!-- NAVIGATION -->
 
-<div class="container nav-inner">
+  <header class="navbar">
+    <div class="container nav-inner">
 
-<a href="#" class="logo">RK<span>Projects</span></a>
+```
+  <a href="#top" class="brand">
+    <div class="brand-mark">RK</div>
+    <div class="brand-text">
+      RK <span>Projects</span>
+    </div>
+  </a>
 
-<ul class="nav-links">
-
-<li><a href="#projects">Projects</a></li>
-<li><a href="#api">API</a></li>
-<li><a href="#details">Details</a></li>
-<li><a href="#technology">Technology</a></li>
-<li><a href="#contact">Live Projects</a></li>
-
-</ul>
-
-</div>
-
-</nav>
-
-<header class="hero">
-
-<div class="container">
-
-<div class="badge">
-<span class="status-dot"></span>
-Live Projects & AI Services
-</div>
-
-<h1>
-Building useful <span class="gradient-text">software with AI</span>
-</h1>
-
-<p>
-A collection of live projects focused on artificial intelligence,
-developer productivity, automation, REST APIs, MCP integrations,
-backend engineering, cloud deployment and practical web applications.
-</p>
-
-<div class="hero-buttons">
-
-<a class="btn btn-smart"
-href="https://rksmartchat.onrender.com/"
-target="_blank"
-rel="noopener">
-💬 Open RK Smart Chat </a>
-
-<a class="btn btn-primary"
-href="https://rkchat-ai.duckdns.org/index.html"
-target="_blank"
-rel="noopener">
-🤖 Open RK AI Assistant </a>
-
-<a class="btn btn-api"
-href="https://rkchat-ai.duckdns.org/docs"
-target="_blank"
-rel="noopener">
-📚 Open API Swagger </a>
-
-<a class="btn btn-mcp"
-href="https://rkchat-ai.duckdns.org/mcp"
-target="_blank"
-rel="noopener">
-🔌 Open RK MCP Server </a>
-
-<a class="btn btn-secondary"
-href="https://rk-resume-builder-frontend.onrender.com"
-target="_blank"
-rel="noopener">
-📄 Open Resume Builder </a>
+  <nav class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#fuel">Featured</a>
+    <a href="#stack">Tech Stack</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
 </div>
+```
 
-</div>
+  </header>
 
-</header>
+  <main id="top">
 
+```
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow reveal">
+        <span class="eyebrow-dot"></span>
+        Software Engineering Portfolio
+      </div>
+
+      <h1 class="reveal delay-1">
+        Building
+        <span class="gradient-text">practical software</span>
+        with AI, APIs & modern web technology.
+      </h1>
+
+      <p class="hero-description reveal delay-2">
+        Welcome to RK Projects — a collection of AI applications,
+        backend services, APIs, MCP tooling, full-stack applications
+        and business-focused software built by Ricky Khatri.
+      </p>
+
+      <div class="hero-actions reveal delay-3">
+
+        <a href="#projects" class="btn btn-primary">
+          Explore Projects
+          <span>↓</span>
+        </a>
+
+        <a
+          href="https://github.com/rickykhatri"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          <svg class="github-icon" viewBox="0 0 24 24">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="stats reveal delay-3">
+
+      <div class="stat">
+        <div class="stat-number">7+</div>
+        <div class="stat-label">Featured Projects</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">AI</div>
+        <div class="stat-label">AI & Automation</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">API</div>
+        <div class="stat-label">Backend Services</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">Web</div>
+        <div class="stat-label">Modern Applications</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
 <section id="projects">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-heading">
+    <div class="section-heading">
 
-<span>Featured Work</span>
+      <div>
+        <div class="section-kicker">01 / Projects</div>
+        <h2>Selected work</h2>
+      </div>
 
-<h2>Live Projects</h2>
+      <p>
+        A selection of applications and engineering projects covering
+        AI, Java, Python, APIs, MCP, MERN and business automation.
+      </p>
 
-<p>
-Explore applications, APIs and AI services that are currently
-deployed and accessible online.
-</p>
+    </div>
 
-</div>
 
-<div class="projects">
+    <div class="projects-grid">
 
-<!-- RK Smart Chat -->
+      <!-- SMART CHAT -->
+      <article class="project-card" style="--accent:#60a5fa">
 
-<article class="project-card">
+        <div class="project-top">
 
-<div class="project-number">01</div>
+          <div class="project-icon">💬</div>
+
+          <div class="project-status">
+            <span class="status-dot"></span>
+            Live
+          </div>
+
+        </div>
 
-<div class="project-icon">💬</div>
+        <h3>RK Smart Chat</h3>
 
-<h3>RK Smart Chat</h3>
+        <p>
+          A smart conversational application backed by a Spring Boot
+          ecosystem, designed around modern backend architecture,
+          APIs and interactive chat capabilities.
+        </p>
 
-<p>
-A Spring Boot and Kotlin-based AI chat application that combines
-backend engineering, database persistence and local LLM integration.
-The application uses Ollama with Llama 3.2 to provide conversational
-AI capabilities through a modern web interface.
-</p>
+        <div class="tech-list">
+          <span class="tech">Spring Boot</span>
+          <span class="tech">Java</span>
+          <span class="tech">REST API</span>
+          <span class="tech">AI</span>
+          <span class="tech">Backend</span>
+        </div>
 
-<div class="tech-list">
+        <div class="project-actions">
 
-<span class="tech">Spring Boot</span> <span class="tech">Kotlin</span> <span class="tech">Java</span> <span class="tech">Gradle</span> <span class="tech">JPA</span> <span class="tech">H2</span> <span class="tech">HTML</span> <span class="tech">CSS</span> <span class="tech">JavaScript</span> <span class="tech">Ollama</span> <span class="tech">Llama 3.2</span>
+          <a
+            href="https://rksmartchat.onrender.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Live Demo ↗
+          </a>
 
-</div>
+          <a
+            href="https://github.com/rickykhatri/rk-smart-chat-springboot"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg class="github-icon" viewBox="0 0 24 24">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+            GitHub
+          </a>
 
-<div class="project-actions">
+        </div>
 
-<a class="btn btn-smart"
-href="https://rksmartchat.onrender.com/"
-target="_blank"
-rel="noopener">
-💬 Live Demo </a>
+      </article>
 
-</div>
 
-</article>
+      <!-- AI ASSISTANT -->
+      <article class="project-card" style="--accent:#a78bfa">
 
-<!-- RK AI Assistant -->
+        <div class="project-top">
+
+          <div class="project-icon">🤖</div>
+
+          <div class="project-status">
+            <span class="status-dot"></span>
+            Live
+          </div>
 
-<article class="project-card">
+        </div>
 
-<div class="project-number">02</div>
+        <h3>RK AI Assistant</h3>
 
-<div class="project-icon">🤖</div>
+        <p>
+          An AI-powered conversational assistant with a Python-based
+          backend and frontend, built to provide intelligent interaction
+          and extensible AI capabilities.
+        </p>
 
-<h3>RK AI Assistant</h3>
+        <div class="tech-list">
+          <span class="tech">Python</span>
+          <span class="tech">AI</span>
+          <span class="tech">LLM</span>
+          <span class="tech">REST</span>
+          <span class="tech">Web</span>
+        </div>
 
-<p>
-A conversational AI web application connected to an RK AI backend.
-It provides an interactive interface for asking questions,
-explaining programming concepts and working with developer
-technologies.
-</p>
+        <div class="project-actions">
 
-<div class="tech-list">
+          <a
+            href="https://rkchat-ai.duckdns.org/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Open Assistant ↗
+          </a>
+
+          <a
+            href="https://github.com/rickykhatri/rk-ai-chat-python"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg class="github-icon" viewBox="0 0 24 24">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+            GitHub
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- AI REST API -->
+      <article class="project-card" style="--accent:#22d3ee">
+
+        <div class="project-top">
+
+          <div class="project-icon">⚡</div>
+
+          <div class="project-status">
+            <span class="status-dot"></span>
+            API
+          </div>
+
+        </div>
+
+        <h3>RK AI REST API</h3>
+
+        <p>
+          API services powering the RK AI ecosystem. Explore the
+          interactive API documentation and available backend endpoints.
+        </p>
+
+        <div class="tech-list">
+          <span class="tech">REST</span>
+          <span class="tech">Python</span>
+          <span class="tech">AI</span>
+          <span class="tech">JSON</span>
+          <span class="tech">API</span>
+        </div>
 
-<span class="tech">AI</span> <span class="tech">Python</span> <span class="tech">FastAPI</span> <span class="tech">MongoDB</span> <span class="tech">Ollama</span> <span class="tech">REST API</span> <span class="tech">Cloud</span>
-
-</div>
-
-<div class="project-actions">
-
-<a class="btn btn-primary"
-href="https://rkchat-ai.duckdns.org/index.html"
-target="_blank"
-rel="noopener">
-🤖 Try AI Assistant </a>
-
-<a class="btn btn-api"
-href="https://rkchat-ai.duckdns.org/docs"
-target="_blank"
-rel="noopener">
-📚 API Docs </a>
-
-</div>
-
-</article>
-
-<!-- RK AI API -->
-
-<article class="project-card" id="api">
-
-<div class="project-number">03</div>
-
-<div class="project-icon">⚡</div>
-
-<h3>RK AI REST API</h3>
-
-<p>
-A FastAPI-powered backend service that exposes the RK AI capabilities
-through a web API. The service provides an interactive Swagger UI
-for exploring and testing the available API functionality.
-</p>
-
-<div class="tech-list">
-
-<span class="tech">Python</span> <span class="tech">FastAPI</span> <span class="tech">REST API</span> <span class="tech">OpenAPI</span> <span class="tech">Swagger UI</span> <span class="tech">MongoDB</span> <span class="tech">AI Backend</span>
-
-</div>
-
-<div class="api-box">
-<code>
-API Documentation → /docs<br>
-Base Service → rkchat-ai.duckdns.org
-</code>
-</div>
-
-<div class="project-actions">
-
-<a class="btn btn-api"
-href="https://rkchat-ai.duckdns.org/docs"
-target="_blank"
-rel="noopener">
-📚 Open Swagger UI </a>
-
-<a class="btn btn-secondary"
-href="https://rkchat-ai.duckdns.org/index.html"
-target="_blank"
-rel="noopener">
-🤖 Open AI App </a>
-
-</div>
-
-</article>
-
-<!-- MCP Server -->
-
-<article class="project-card">
-
-<div class="project-number">04</div>
-
-<div class="project-icon">🔌</div>
-
-<h3>RK MCP Server</h3>
-
-<p>
-A Model Context Protocol server developed in Python using FastMCP.
-It provides an MCP interface for connecting AI applications and
-agents with backend tools and capabilities through a standardized
-protocol.
-</p>
-
-<div class="tech-list">
-
-<span class="tech">Python</span> <span class="tech">FastMCP</span> <span class="tech">MCP</span> <span class="tech">AI Integration</span> <span class="tech">APIs</span> <span class="tech">Backend</span>
-
-</div>
-
-<div class="project-actions">
-
-<a class="btn btn-mcp"
-href="https://rkchat-ai.duckdns.org/mcp"
-target="_blank"
-rel="noopener">
-🔌 Open MCP Server </a>
-
-</div>
-
-</article>
-
-<!-- Resume Builder -->
-
-<article class="project-card">
-
-<div class="project-number">05</div>
-
-<div class="project-icon">📄</div>
-
-<h3>RK Resume Builder</h3>
-
-<p>
-A web-based resume building application designed to simplify
-the process of creating professional resumes through a
-structured and user-friendly interface.
-</p>
-
-<div class="tech-list">
-
-<span class="tech">Web Application</span> <span class="tech">Resume Generation</span> <span class="tech">Responsive UI</span> <span class="tech">Frontend</span>
-
-</div>
-
-<div class="project-actions">
-
-<a class="btn btn-primary"
-href="https://rk-resume-builder-frontend.onrender.com"
-target="_blank"
-rel="noopener">
-🚀 Live Demo </a>
-
-</div>
-
-</article>
-
-<!-- AI Ecosystem -->
-
-<article class="project-card">
-
-<div class="project-number">06</div>
-
-<div class="project-icon">🧠</div>
-
-<h3>RK AI Ecosystem</h3>
-
-<p>
-An interconnected AI development ecosystem combining a conversational
-web application, FastAPI backend services, local LLM integration,
-REST APIs and Model Context Protocol infrastructure.
-</p>
-
-<div class="tech-list">
-
-<span class="tech">AI</span> <span class="tech">FastAPI</span> <span class="tech">Ollama</span> <span class="tech">Llama 3.2</span> <span class="tech">MCP</span> <span class="tech">MongoDB</span> <span class="tech">REST</span> <span class="tech">Cloud</span>
-
-</div>
-
-<div class="project-actions">
-
-<a class="btn btn-primary"
-href="https://rkchat-ai.duckdns.org/index.html"
-target="_blank"
-rel="noopener">
-🤖 AI Assistant </a>
-
-<a class="btn btn-api"
-href="https://rkchat-ai.duckdns.org/docs"
-target="_blank"
-rel="noopener">
-📚 API </a>
-
-<a class="btn btn-mcp"
-href="https://rkchat-ai.duckdns.org/mcp"
-target="_blank"
-rel="noopener">
-🔌 MCP </a>
-
-</div>
-
-</article>
-
-</div>
-
-</div>
+        <div class="project-actions">
+
+          <a
+            href="https://rkchat-ai.duckdns.org/docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            API Docs ↗
+          </a>
+
+          <a
+            href="https://rkchat-ai.duckdns.org/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            AI Platform ↗
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- MCP -->
+      <article class="project-card" style="--accent:#f472b6">
+
+        <div class="project-top">
+
+          <div class="project-icon">🔌</div>
+
+          <div class="project-status">
+            <span class="status-dot"></span>
+            MCP
+          </div>
+
+        </div>
+
+        <h3>RK MCP Server</h3>
+
+        <p>
+          Model Context Protocol server functionality integrated into
+          the RK AI Python project, enabling AI systems to work with
+          structured tools and context.
+        </p>
+
+        <div class="tech-list">
+          <span class="tech">MCP</span>
+          <span class="tech">Python</span>
+          <span class="tech">AI</span>
+          <span class="tech">Tools</span>
+          <span class="tech">Context</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://rkchat-ai.duckdns.org/mcp"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            MCP Endpoint ↗
+          </a>
+
+          <a
+            href="https://github.com/rickykhatri/rk-ai-chat-python"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg class="github-icon" viewBox="0 0 24 24">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+            GitHub
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- RESUME BUILDER -->
+      <article class="project-card" style="--accent:#34d399">
+
+        <div class="project-top">
+
+          <div class="project-icon">📄</div>
+
+          <div class="project-status">
+            <span class="status-dot"></span>
+            Live
+          </div>
+
+        </div>
+
+        <h3>RK Resume Builder</h3>
+
+        <p>
+          A web-based resume builder designed to help users create
+          structured, professional resumes through an interactive
+          application experience.
+        </p>
+
+        <div class="tech-list">
+          <span class="tech">MERN</span>
+          <span class="tech">React</span>
+          <span class="tech">Node.js</span>
+          <span class="tech">Express</span>
+          <span class="tech">MongoDB</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://rk-resume-builder-frontend.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Open Builder ↗
+          </a>
+
+          <a
+            href="https://github.com/rickykhatri/mern-repository/tree/master"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg class="github-icon" viewBox="0 0 24 24">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+            GitHub
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- AI ECOSYSTEM -->
+      <article class="project-card" style="--accent:#fb923c">
+
+        <div class="project-top">
+
+          <div class="project-icon">🧠</div>
+
+          <div class="project-status">
+            <span class="status-dot"></span>
+            Ecosystem
+          </div>
+
+        </div>
+
+        <h3>RK AI Ecosystem</h3>
+
+        <p>
+          A connected collection of AI applications, services, APIs and
+          tooling forming a broader ecosystem around conversational AI
+          and intelligent software.
+        </p>
+
+        <div class="tech-list">
+          <span class="tech">AI</span>
+          <span class="tech">Python</span>
+          <span class="tech">APIs</span>
+          <span class="tech">MCP</span>
+          <span class="tech">Automation</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://rkchat-ai.duckdns.org/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Explore Ecosystem ↗
+          </a>
+
+          <a
+            href="https://github.com/rickykhatri/rk-ai-chat-python"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg class="github-icon" viewBox="0 0 24 24">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c0-.31-.21-.67-.79-.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5s11.5 5.15 11.5 11.5c0 5.08-3.29 9.39-7.86 10.91-.58.11-.8-.25-.8-.56v-3.23c0-1.1-.37-1.82-.78-2.18 2.56-.28 5.25-1.26 5.25-5.69 0-1.26-.45-2.29-1.18-3.1.12-.29.51-1.47-.11-3.06 0 0-.96-.31-3.15 1.18a10.94 10.94 0 0 0-5.74 0C6.94 4.78 5.98 5.09 5.98 5.09c-.62 1.59-.23 2.77-.11 3.06-.73.81-1.18 1.84-1.18 3.1 0 4.42 2.68 5.41 5.23 5.7-.33.28-.63.78-.73 1.52-.65.29-2.31.8-3.33-.95 0 0-.6-1.1-1.75-1.18 0 0-1.12-.01-.08.7 0 0 .75.36 1.28 1.69 0 0 .68 2.24 3.88 1.54v2.17c0 .31-.21.67-.79.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5z"/>
+            </svg>
+            GitHub
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- FUEL BILL -->
+      <article class="project-card featured" id="fuel" style="--accent:#60a5fa">
+
+        <div class="fuel-layout">
+
+          <div class="fuel-copy">
+
+            <div class="section-kicker">Featured Project</div>
+
+            <h3>
+              Fuel Bill &
+              <span class="gradient-text">Cash Memo Generator</span>
+            </h3>
+
+            <p>
+              A modern printable fuel-station cash and credit memo
+              generator built for practical business use. It provides
+              interactive receipt editing, automatic calculations,
+              digital signatures, custom branding and print-ready output.
+            </p>
+
+            <ul class="feature-list">
+
+              <li>
+                <span class="feature-check">✓</span>
+                Interactive in-place receipt editing
+              </li>
+
+              <li>
+                <span class="feature-check">✓</span>
+                Petrol, Diesel, CNG and 2T Oil calculations
+              </li>
+
+              <li>
+                <span class="feature-check">✓</span>
+                Automatic quantity × rate calculations
+              </li>
+
+              <li>
+                <span class="feature-check">✓</span>
+                Digital signature pad and stamp modes
+              </li>
+
+              <li>
+                <span class="feature-check">✓</span>
+                Custom dealer and station logos
+              </li>
+
+              <li>
+                <span class="feature-check">✓</span>
+                Print and PDF-ready thermal receipt styling
+              </li>
+
+            </ul>
+
+            <div class="project-actions">
+
+              <a
+                href="https://rickykhatri.github.io/rk-fuel-bill-generator/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                Launch Generator ↗
+              </a>
+
+              <a
+                href="https://github.com/rickykhatri/rk-fuel-bill-generator"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+              >
+                <svg class="github-icon" viewBox="0 0 24 24">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c0-.31-.21-.67-.79-.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5s11.5 5.15 11.5 11.5c0 5.08-3.29 9.39-7.86 10.91-.58.11-.8-.25-.8-.56v-3.23c0-1.1-.37-1.82-.78-2.18 2.56-.28 5.25-1.26 5.25-5.69 0-1.26-.45-2.29-1.18-3.1.12-.29.51-1.47-.11-3.06 0 0-.96-.31-3.15 1.18a10.94 10.94 0 0 0-5.74 0C6.94 4.78 5.98 5.09 5.98 5.09c-.62 1.59-.23 2.77-.11 3.06-.73.81-1.18 1.84-1.18 3.1 0 4.42 2.68 5.41 5.23 5.7-.33.28-.63.78-.73 1.52-.65.29-2.31.8-3.33-.95 0 0-.6-1.1-1.75-1.18 0 0-1.12-.01-.08.7 0 0 .75.36 1.28 1.69 0 0 .68 2.24 3.88 1.54v2.17c0 .31-.21.67-.79.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5z"/>
+                </svg>
+                GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="receipt-wrap">
+
+            <div class="receipt-glow"></div>
+
+            <div class="receipt">
+
+              <div class="receipt-head">
+
+                <div class="receipt-logo">
+                  BP
+                </div>
+
+                <div class="receipt-title">
+                  <strong>FUEL STATION</strong>
+                  <span>CASH / CREDIT MEMO</span>
+                </div>
+
+                <div class="receipt-logo">
+                  AGL
+                </div>
+
+              </div>
+
+              <div class="receipt-meta">
+
+                <div>
+                  Memo No.<br />
+                  <strong>343</strong>
+                </div>
+
+                <div>
+                  Date<br />
+                  <strong>18/09/2026</strong>
+                </div>
+
+                <div>
+                  Customer<br />
+                  <strong>Customer Name</strong>
+                </div>
+
+                <div>
+                  Vehicle<br />
+                  <strong>MP09 XX 0000</strong>
+                </div>
+
+              </div>
+
+              <div class="receipt-line">
+                <span>PRODUCT</span>
+                <span>AMOUNT</span>
+              </div>
+
+              <div class="receipt-line">
+                <span>Petrol × 10 L</span>
+                <span>₹ 1,000.00</span>
+              </div>
+
+              <div class="receipt-line">
+                <span>Diesel × 5 L</span>
+                <span>₹ 450.00</span>
+              </div>
+
+              <div class="receipt-line">
+                <span>CNG × 2 KG</span>
+                <span>₹ 180.00</span>
+              </div>
+
+              <div class="receipt-total">
+                <span>TOTAL</span>
+                <span>₹ 1,630.00</span>
+              </div>
+
+              <div class="receipt-sign">
+                <span>Customer Signature</span>
+                <span>Dealer Signature</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
 
 </section>
 
-<section id="details">
 
-<div class="container">
-
-<div class="section-heading">
-
-<span>Project Overview</span>
-
-<h2>What These Projects Demonstrate</h2>
-
-<p>
-These applications represent practical development work across
-frontend engineering, backend APIs, database persistence,
-AI integration, REST services, MCP infrastructure and cloud deployment.
-</p>
-
-</div>
-
-<div class="detail-grid">
-
-<!-- Smart Chat -->
-
-<div class="detail-card">
-
-<h3>💬 RK Smart Chat</h3>
-
-<ul class="feature-list">
-
-<li>Spring Boot backend architecture</li>
-<li>Kotlin and Java development</li>
-<li>Gradle build automation</li>
-<li>JPA database integration</li>
-<li>H2 relational database</li>
-<li>HTML, CSS and JavaScript frontend</li>
-<li>Ollama AI integration</li>
-<li>Llama 3.2 language model</li>
-<li>Live Render deployment</li>
-
-</ul>
-
-</div>
-
-<!-- AI Assistant -->
-
-<div class="detail-card">
-
-<h3>🤖 RK AI Assistant</h3>
-
-<ul class="feature-list">
-
-<li>Interactive conversational interface</li>
-<li>New chat and conversation management</li>
-<li>Light / dark theme support</li>
-<li>Quick prompts for developer tasks</li>
-<li>AI backend integration</li>
-<li>Developer-oriented AI assistance</li>
-<li>FastAPI backend services</li>
-<li>Live cloud deployment</li>
-
-</ul>
-
-</div>
-
-<!-- REST API -->
-
-<div class="detail-card">
-
-<h3>⚡ RK AI REST API</h3>
-
-<ul class="feature-list">
-
-<li>Python-based backend service</li>
-<li>FastAPI framework</li>
-<li>REST API architecture</li>
-<li>OpenAPI API specification</li>
-<li>Interactive Swagger UI</li>
-<li>API endpoint exploration</li>
-<li>Backend AI integration</li>
-<li>MongoDB integration</li>
-<li>HTTPS API access</li>
-
-</ul>
-
-<br>
-
-<a class="btn btn-api"
-href="https://rkchat-ai.duckdns.org/docs"
-target="_blank"
-rel="noopener">
-📚 Explore Swagger Documentation </a>
-
-</div>
-
-<!-- MCP Server -->
-
-<div class="detail-card">
-
-<h3>🔌 RK MCP Server</h3>
-
-<ul class="feature-list">
-
-<li>Model Context Protocol server</li>
-<li>Developed using Python</li>
-<li>Built with FastMCP</li>
-<li>Designed for AI tool integration</li>
-<li>Backend service for AI applications</li>
-<li>MCP endpoint available online</li>
-<li>Supports modern AI agent workflows</li>
-
-</ul>
-
-</div>
-
-<!-- Resume Builder -->
-
-<div class="detail-card">
-
-<h3>📄 RK Resume Builder</h3>
-
-<ul class="feature-list">
-
-<li>Dedicated web application for resume creation</li>
-<li>Structured resume-building workflow</li>
-<li>Professional web interface</li>
-<li>Responsive application design</li>
-<li>Live cloud deployment</li>
-<li>Focused on simplifying resume creation</li>
-
-</ul>
-
-</div>
-
-<!-- API Architecture -->
-
-<div class="detail-card">
-
-<h3>🌐 API Architecture</h3>
-
-<p>
-The RK AI platform exposes backend capabilities through a
-FastAPI-based REST service. The API is documented through
-OpenAPI and provides an interactive Swagger interface for
-developers to inspect and test the service.
-</p>
-
-<br>
-
-<ul class="feature-list">
-
-<li>FastAPI application</li>
-<li>RESTful backend architecture</li>
-<li>OpenAPI documentation</li>
-<li>Swagger UI</li>
-<li>HTTPS endpoint</li>
-<li>AI service integration</li>
-<li>Database-backed services</li>
-
-</ul>
-
-</div>
-
-<!-- Deployment -->
-
-<div class="detail-card">
-
-<h3>☁️ Deployment</h3>
-
-<p>
-The projects demonstrate experience with deploying frontend
-applications, backend APIs and AI-enabled services to cloud
-environments with publicly accessible HTTPS endpoints.
-</p>
-
-<br>
-
-<ul class="feature-list">
-
-<li>Render deployment</li>
-<li>Oracle Cloud deployment for RK AI services</li>
-<li>Custom DuckDNS domain</li>
-<li>HTTPS access</li>
-<li>Publicly accessible applications</li>
-<li>Live REST API</li>
-<li>Live Swagger documentation</li>
-<li>Live MCP endpoint</li>
-
-</ul>
-
-</div>
-
-<!-- Engineering Focus -->
-
-<div class="detail-card">
-
-<h3>💡 Engineering Focus</h3>
-
-<p>
-The projects combine practical web development with backend
-engineering, relational database development, AI capabilities,
-REST API development and modern Model Context Protocol integration.
-</p>
-
-<br>
-
-<ul class="feature-list">
-
-<li>Frontend development</li>
-<li>Spring Boot development</li>
-<li>Kotlin and Java</li>
-<li>Python backend development</li>
-<li>REST API development</li>
-<li>Database persistence</li>
-<li>AI integration</li>
-<li>MCP server development</li>
-<li>Cloud deployment</li>
-
-</ul>
-
-</div>
-
-<!-- AI Infrastructure -->
-
-<div class="detail-card">
-
-<h3>🧠 AI Infrastructure</h3>
-
-<p>
-The RK AI ecosystem combines conversational applications,
-local LLM inference, backend services, REST APIs and MCP
-infrastructure to create a connected platform for AI-powered development.
-</p>
-
-<br>
-
-<ul class="feature-list">
-
-<li>Ollama integration</li>
-<li>Llama 3.2</li>
-<li>FastAPI services</li>
-<li>Spring Boot AI application</li>
-<li>FastMCP integration</li>
-<li>Model Context Protocol</li>
-<li>REST APIs</li>
-<li>Developer tooling</li>
-
-</ul>
-
-</div>
-
-<!-- Database & Backend -->
-
-<div class="detail-card">
-
-<h3>🗄️ Backend &amp; Database</h3>
-
-<p>
-The RK projects demonstrate backend application development
-across the JVM and Python ecosystems, together with relational
-and document database technologies.
-</p>
-
-<br>
-
-<ul class="feature-list">
-
-<li>Spring Boot</li>
-<li>Kotlin</li>
-<li>Java</li>
-<li>Python</li>
-<li>FastAPI</li>
-<li>Gradle</li>
-<li>JPA / Hibernate</li>
-<li>H2 Database</li>
-<li>MongoDB</li>
-<li>REST APIs</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
+<!-- CAPABILITIES -->
+<section>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+        <div class="section-kicker">02 / Capabilities</div>
+        <h2>What I build</h2>
+      </div>
+
+      <p>
+        Combining backend engineering, AI, APIs and modern frontend
+        development to create useful software products.
+      </p>
+
+    </div>
+
+
+    <div class="capabilities">
+
+      <div class="capability">
+        <div class="capability-icon">🤖</div>
+        <h4>AI Applications</h4>
+        <p>
+          Conversational AI, intelligent assistants, LLM integrations
+          and AI-powered application workflows.
+        </p>
+      </div>
+
+      <div class="capability">
+        <div class="capability-icon">⚙️</div>
+        <h4>Backend Engineering</h4>
+        <p>
+          Java, Spring Boot and Python services with structured,
+          maintainable backend architectures.
+        </p>
+      </div>
+
+      <div class="capability">
+        <div class="capability-icon">🔗</div>
+        <h4>API Development</h4>
+        <p>
+          REST APIs, API documentation, integrations and services
+          designed for application-to-application communication.
+        </p>
+      </div>
+
+      <div class="capability">
+        <div class="capability-icon">🧩</div>
+        <h4>MCP & AI Tools</h4>
+        <p>
+          Model Context Protocol based tooling for connecting AI
+          systems with structured capabilities and context.
+        </p>
+      </div>
+
+      <div class="capability">
+        <div class="capability-icon">🌐</div>
+        <h4>Full-Stack Web</h4>
+        <p>
+          Responsive web applications using modern frontend and
+          backend technologies.
+        </p>
+      </div>
+
+      <div class="capability">
+        <div class="capability-icon">🏢</div>
+        <h4>Business Applications</h4>
+        <p>
+          Practical applications such as billing, memo generation,
+          resume creation and business automation tools.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
-<section id="technology">
 
-<div class="container">
+<!-- TECHNOLOGY STACK -->
+<section id="stack">
 
-<div class="section-heading">
+  <div class="container">
 
-<span>Technology</span>
+    <div class="section-heading">
 
-<h2>Technology &amp; Skills</h2>
+      <div>
+        <div class="section-kicker">03 / Technology</div>
+        <h2>Technology stack</h2>
+      </div>
 
-<p>
-Technologies represented across the live applications,
-AI services, REST APIs and backend projects.
-</p>
+      <p>
+        A flexible engineering stack selected according to the needs
+        of each project.
+      </p>
 
-</div>
+    </div>
 
-<div class="stack">
 
-<div class="stack-item">
-<div class="stack-icon">☕</div>
-<strong>Java</strong>
-<small>Backend Development</small>
-</div>
+    <div class="stack">
 
-<div class="stack-item">
-<div class="stack-icon">🟣</div>
-<strong>Kotlin</strong>
-<small>JVM Development</small>
-</div>
+      <span class="stack-item">Java</span>
+      <span class="stack-item">Spring Boot</span>
+      <span class="stack-item">Python</span>
+      <span class="stack-item">FastAPI</span>
+      <span class="stack-item">REST APIs</span>
+      <span class="stack-item">MCP</span>
+      <span class="stack-item">AI / LLM</span>
+      <span class="stack-item">React</span>
+      <span class="stack-item">JavaScript</span>
+      <span class="stack-item">TypeScript</span>
+      <span class="stack-item">Node.js</span>
+      <span class="stack-item">Express</span>
+      <span class="stack-item">MongoDB</span>
+      <span class="stack-item">Docker</span>
+      <span class="stack-item">GitHub</span>
+      <span class="stack-item">GitHub Actions</span>
+      <span class="stack-item">GitHub Pages</span>
+      <span class="stack-item">HTML / CSS</span>
 
-<div class="stack-item">
-<div class="stack-icon">🍃</div>
-<strong>Spring Boot</strong>
-<small>Backend Framework</small>
-</div>
+    </div>
 
-<div class="stack-item">
-<div class="stack-icon">🐘</div>
-<strong>Gradle</strong>
-<small>Build Automation</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🗄️</div>
-<strong>JPA</strong>
-<small>Persistence</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">💾</div>
-<strong>H2</strong>
-<small>Database</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🐍</div>
-<strong>Python</strong>
-<small>Backend / AI</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">⚡</div>
-<strong>FastAPI</strong>
-<small>API Development</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">📚</div>
-<strong>OpenAPI</strong>
-<small>API Specification</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">📖</div>
-<strong>Swagger UI</strong>
-<small>API Documentation</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🔌</div>
-<strong>FastMCP</strong>
-<small>MCP Server</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🧠</div>
-<strong>MCP</strong>
-<small>AI Integration</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🤖</div>
-<strong>Ollama</strong>
-<small>Local AI</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🦙</div>
-<strong>Llama 3.2</strong>
-<small>Language Model</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🍃</div>
-<strong>MongoDB</strong>
-<small>Database</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🌐</div>
-<strong>HTML / CSS / JS</strong>
-<small>Frontend</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">☁️</div>
-<strong>Cloud</strong>
-<small>Deployment</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🔐</div>
-<strong>HTTPS / APIs</strong>
-<small>Web Services</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🐙</div>
-<strong>Git</strong>
-<small>Version Control</small>
-</div>
-
-<div class="stack-item">
-<div class="stack-icon">🚀</div>
-<strong>REST API</strong>
-<small>Backend Services</small>
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
+
+<!-- CTA -->
 <section id="contact">
 
-<div class="container">
+  <div class="container">
 
-<div class="cta">
+    <div class="cta">
 
-<h2>Explore the RK AI Ecosystem</h2>
+      <div class="section-kicker">
+        04 / Explore the code
+      </div>
 
-<p>
-Try the live applications, explore the FastAPI Swagger documentation,
-connect with the MCP server, or create a professional resume using
-the Resume Builder.
-</p>
+      <h2>
+        Build. Experiment.
+        <span class="gradient-text">Ship.</span>
+      </h2>
 
-<div class="hero-buttons">
+      <p>
+        Explore the live applications and source repositories to see
+        how the projects are built.
+      </p>
 
-<a class="btn btn-smart"
-href="https://rksmartchat.onrender.com/"
-target="_blank"
-rel="noopener">
-💬 Launch RK Smart Chat </a>
+      <div class="hero-actions" style="justify-content:center">
 
-<a class="btn btn-primary"
-href="https://rkchat-ai.duckdns.org/index.html"
-target="_blank"
-rel="noopener">
-🤖 Launch RK AI Assistant </a>
+        <a
+          href="https://github.com/rickykhatri"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          <svg class="github-icon" viewBox="0 0 24 24">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+          View GitHub Profile
+        </a>
 
-<a class="btn btn-api"
-href="https://rkchat-ai.duckdns.org/docs"
-target="_blank"
-rel="noopener">
-📚 Explore API Docs </a>
+        <a
+          href="https://rickykhatri.github.io/rk-fuel-bill-generator/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          Try Fuel Generator ↗
+        </a>
 
-<a class="btn btn-mcp"
-href="https://rkchat-ai.duckdns.org/mcp"
-target="_blank"
-rel="noopener">
-🔌 Launch MCP Server </a>
+      </div>
 
-<a class="btn btn-secondary"
-href="https://rk-resume-builder-frontend.onrender.com"
-target="_blank"
-rel="noopener">
-📄 Launch Resume Builder </a>
+    </div>
 
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
+```
 
-<footer>
+  </main>
 
-<div class="container">
+  <!-- FOOTER -->
 
-<p>
-© 2026 <strong>RK Projects</strong>
-· Designed &amp; Developed by Ricky Khatri
-</p>
+  <footer>
+
+```
+<div class="container footer-inner">
+
+  <div class="footer-copy">
+    © 2026 <strong>Ricky Khatri</strong>. Built with HTML, CSS & curiosity.
+  </div>
+
+  <div class="footer-links">
+
+    <a
+      href="https://github.com/rickykhatri"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </a>
+
+    <a href="#top">
+      Back to top ↑
+    </a>
+
+  </div>
 
 </div>
+```
 
-</footer>
+  </footer>
 
 </body>
-
 </html>
