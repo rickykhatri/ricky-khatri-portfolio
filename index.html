@@ -451,6 +451,9 @@
       color: var(--accent);
       background: rgba(167, 184, 149, 0.08);
       border: 1px solid rgba(167, 184, 149, 0.12);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 13px;
     }
 
     .project-status {
@@ -503,15 +506,16 @@
     .project-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 7px;
       min-height: 37px;
-      padding: 0 12px;
+      padding: 0 13px;
       border-radius: 9px;
       border: 1px solid var(--border);
       color: var(--text-soft);
       background: rgba(255, 255, 255, 0.02);
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       transition: 0.2s ease;
     }
 
@@ -519,12 +523,35 @@
       color: var(--text);
       border-color: var(--border-strong);
       background: rgba(167, 184, 149, 0.06);
+      transform: translateY(-1px);
+    }
+
+    .project-link.launch {
+      color: #121611;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .project-link.launch:hover {
+      color: #121611;
+      background: #b7c5a8;
+      border-color: #b7c5a8;
     }
 
     .github-icon {
       width: 15px;
       height: 15px;
       fill: currentColor;
+    }
+
+    .launch-icon {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     /* =========================
@@ -954,6 +981,10 @@
       .hero-actions .btn {
         flex: 1;
       }
+
+      .project-links .project-link {
+        flex: 1;
+      }
     }
   </style>
 
@@ -961,414 +992,441 @@
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
-
-  <header>
-    <div class="container nav">
+<header>
+  <div class="container nav">
 
 
-  <a href="#" class="brand">
-    <span class="brand-mark">RK</span>
-    <span>RK Projects</span>
-  </a>
+<a href="#" class="brand">
+  <span class="brand-mark">RK</span>
+  <span>RK Projects</span>
+</a>
 
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#capabilities">Capabilities</a>
-    <a href="#stack">Stack</a>
-    <a href="#contact" class="nav-cta">Contact</a>
-  </nav>
-
-</div>
+<nav>
+  <a href="#projects">Projects</a>
+  <a href="#capabilities">Capabilities</a>
+  <a href="#stack">Stack</a>
+  <a href="#contact" class="nav-cta">Contact</a>
+</nav>
 
 
-  </header>
+  </div>
+</header>
 
-  <main>
-
-
-<!-- =========================
-     HERO
-========================= -->
+<main>
 
 <section class="hero">
   <div class="container">
 
-    <div class="eyebrow">
-      <span class="eyebrow-dot"></span>
-      Software Engineering Portfolio
-    </div>
 
-    <h1>
-      Building useful software with
-      <span>clean engineering.</span>
-    </h1>
+<div class="eyebrow">
+  <span class="eyebrow-dot"></span>
+  Software Engineering Portfolio
+</div>
 
-    <p class="hero-copy">
-      A collection of backend systems, AI applications, APIs,
-      automation tools and practical software products built with
-      modern engineering practices.
-    </p>
+<h1>
+  Building useful software with
+  <span>clean engineering.</span>
+</h1>
 
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">
-        Explore Projects →
-      </a>
+<p class="hero-copy">
+  A collection of backend systems, AI applications, APIs,
+  automation tools and practical software products built with
+  modern engineering practices.
+</p>
 
-      <a href="#contact" class="btn btn-secondary">
-        Get in Touch
-      </a>
-    </div>
+<div class="hero-actions">
+  <a href="#projects" class="btn btn-primary">
+    Explore Projects →
+  </a>
+
+  <a href="#contact" class="btn btn-secondary">
+    Get in Touch
+  </a>
+</div>
+
 
   </div>
 </section>
-
-
-<!-- =========================
-     STATS
-========================= -->
 
 <div class="container">
 
   <div class="stats">
 
-    <div class="stat">
-      <span class="stat-number">07+</span>
-      <span class="stat-label">Featured Projects</span>
-    </div>
 
-    <div class="stat">
-      <span class="stat-number">AI</span>
-      <span class="stat-label">Intelligent Systems</span>
-    </div>
+<div class="stat">
+  <span class="stat-number">07+</span>
+  <span class="stat-label">Featured Projects</span>
+</div>
 
-    <div class="stat">
-      <span class="stat-number">API</span>
-      <span class="stat-label">Backend Engineering</span>
-    </div>
+<div class="stat">
+  <span class="stat-number">AI</span>
+  <span class="stat-label">Intelligent Systems</span>
+</div>
 
-    <div class="stat">
-      <span class="stat-number">MCP</span>
-      <span class="stat-label">AI Tooling</span>
-    </div>
+<div class="stat">
+  <span class="stat-number">API</span>
+  <span class="stat-label">Backend Engineering</span>
+</div>
+
+<div class="stat">
+  <span class="stat-number">MCP</span>
+  <span class="stat-label">AI Tooling</span>
+</div>
+
 
   </div>
 
 </div>
 
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
 <section id="projects">
 
   <div class="container">
 
-    <div class="section-heading">
 
-      <div>
-        <div class="section-kicker">Selected Work</div>
-        <h2 class="section-title">Projects</h2>
-      </div>
+<div class="section-heading">
 
-      <p class="section-description">
-        Practical products and engineering experiments covering
-        backend development, AI, APIs, automation and modern web
-        applications.
-      </p>
+  <div>
+    <div class="section-kicker">Selected Work</div>
+    <h2 class="section-title">Projects</h2>
+  </div>
+
+  <p class="section-description">
+    Practical products and engineering experiments covering
+    backend development, AI, APIs, automation and modern web
+    applications.
+  </p>
+
+</div>
+
+<div class="projects-grid">
+
+  <!-- 01 Smart Chat -->
+  <article class="project-card">
+
+    <div class="project-top">
+      <div class="project-icon">01</div>
+      <span class="project-status">Live</span>
+    </div>
+
+    <h3>RK Smart Chat</h3>
+
+    <p>
+      A Spring Boot based intelligent chat application focused
+      on real-time communication and scalable backend architecture.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Spring Boot</span>
+      <span class="tag">Java</span>
+      <span class="tag">WebSocket</span>
+      <span class="tag">AI</span>
+    </div>
+
+    <div class="project-links">
+
+      <a
+        class="project-link launch"
+        href="https://github.com/rickykhatri/rk-smart-chat-springboot"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="launch-icon" viewBox="0 0 24 24">
+          <path d="M14 5h5v5"></path>
+          <path d="M10 14 19 5"></path>
+          <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path>
+        </svg>
+        Launch
+      </a>
+
+      <a
+        class="project-link"
+        href="https://github.com/rickykhatri/rk-smart-chat-springboot"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+        </svg>
+        Source
+      </a>
 
     </div>
 
-
-    <div class="projects-grid">
-
-      <!-- Smart Chat -->
-
-      <article class="project-card">
-
-        <div class="project-top">
-
-          <div class="project-icon">01</div>
-
-          <span class="project-status">
-            Live
-          </span>
-
-        </div>
-
-        <h3>RK Smart Chat</h3>
-
-        <p>
-          A Spring Boot based intelligent chat application focused
-          on real-time communication and scalable backend architecture.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Spring Boot</span>
-          <span class="tag">Java</span>
-          <span class="tag">WebSocket</span>
-          <span class="tag">AI</span>
-        </div>
-
-        <div class="project-links">
-
-          <a
-            class="project-link"
-            href="https://github.com/rickykhatri/rk-smart-chat-springboot"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
-            </svg>
-            Source
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- AI Assistant -->
-
-      <article class="project-card">
-
-        <div class="project-top">
-
-          <div class="project-icon">02</div>
-
-          <span class="project-status">
-            AI
-          </span>
-
-        </div>
-
-        <h3>RK AI Assistant</h3>
-
-        <p>
-          A Python-based AI assistant designed to connect intelligent
-          language capabilities with practical application workflows.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">LLM</span>
-          <span class="tag">AI</span>
-          <span class="tag">Automation</span>
-        </div>
-
-        <div class="project-links">
-
-          <a
-            class="project-link"
-            href="https://github.com/rickykhatri/rk-ai-chat-python"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
-            </svg>
-            Source
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- MCP Server -->
-
-      <article class="project-card">
-
-        <div class="project-top">
-
-          <div class="project-icon">03</div>
-
-          <span class="project-status">
-            MCP
-          </span>
-
-        </div>
-
-        <h3>RK MCP Server</h3>
-
-        <p>
-          A Model Context Protocol server for exposing tools and
-          capabilities to AI systems through a structured interface.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">MCP</span>
-          <span class="tag">AI Tools</span>
-          <span class="tag">LLM</span>
-        </div>
-
-        <div class="project-links">
-
-          <a
-            class="project-link"
-            href="https://github.com/rickykhatri/rk-ai-chat-python"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
-            </svg>
-            Source
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- REST API -->
-
-      <article class="project-card">
-
-        <div class="project-top">
-
-          <div class="project-icon">04</div>
-
-          <span class="project-status">
-            API
-          </span>
-
-        </div>
-
-        <h3>RK AI REST API</h3>
-
-        <p>
-          A backend API layer for integrating AI capabilities into
-          external applications and services.
-        </p>
-
-        <div class="tags">
-          <span class="tag">REST</span>
-          <span class="tag">API</span>
-          <span class="tag">AI</span>
-          <span class="tag">Backend</span>
-        </div>
-
-        <div class="project-links">
-
-          <a
-            class="project-link"
-            href="https://rickykhatri.github.io/rk-ai-rest-api/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live API →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- Resume Builder -->
-
-      <article class="project-card">
-
-        <div class="project-top">
-
-          <div class="project-icon">05</div>
-
-          <span class="project-status">
-            Web App
-          </span>
-
-        </div>
-
-        <h3>RK Resume Builder</h3>
-
-        <p>
-          A modern resume-building application focused on structured
-          profile creation and generating polished professional resumes.
-        </p>
-
-        <div class="tags">
-          <span class="tag">MERN</span>
-          <span class="tag">React</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">MongoDB</span>
-        </div>
-
-        <div class="project-links">
-
-          <a
-            class="project-link"
-            href="https://github.com/rickykhatri/mern-repository/tree/master"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
-            </svg>
-            Source
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- AI Ecosystem -->
-
-      <article class="project-card">
-
-        <div class="project-top">
-
-          <div class="project-icon">06</div>
-
-          <span class="project-status">
-            Ecosystem
-          </span>
-
-        </div>
-
-        <h3>RK AI Ecosystem</h3>
-
-        <p>
-          A broader collection of AI experiments, assistants, tools
-          and supporting services built around modern AI workflows.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">AI</span>
-          <span class="tag">LLM</span>
-          <span class="tag">Automation</span>
-        </div>
-
-        <div class="project-links">
-
-          <a
-            class="project-link"
-            href="https://github.com/rickykhatri/rk-ai-chat-python"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
-            </svg>
-            Source
-          </a>
-
-        </div>
-
-      </article>
+  </article>
+
+  <!-- 02 AI Assistant -->
+  <article class="project-card">
+
+    <div class="project-top">
+      <div class="project-icon">02</div>
+      <span class="project-status">AI</span>
+    </div>
+
+    <h3>RK AI Assistant</h3>
+
+    <p>
+      A Python-based AI assistant designed to connect intelligent
+      language capabilities with practical application workflows.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">LLM</span>
+      <span class="tag">AI</span>
+      <span class="tag">Automation</span>
+    </div>
+
+    <div class="project-links">
+
+      <a
+        class="project-link launch"
+        href="https://github.com/rickykhatri/rk-ai-chat-python"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="launch-icon" viewBox="0 0 24 24">
+          <path d="M14 5h5v5"></path>
+          <path d="M10 14 19 5"></path>
+          <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path>
+        </svg>
+        Launch
+      </a>
+
+      <a
+        class="project-link"
+        href="https://github.com/rickykhatri/rk-ai-chat-python"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+        </svg>
+        Source
+      </a>
 
     </div>
+
+  </article>
+
+  <!-- 03 MCP Server -->
+  <article class="project-card">
+
+    <div class="project-top">
+      <div class="project-icon">03</div>
+      <span class="project-status">MCP</span>
+    </div>
+
+    <h3>RK MCP Server</h3>
+
+    <p>
+      A Model Context Protocol server for exposing tools and
+      capabilities to AI systems through a structured interface.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">MCP</span>
+      <span class="tag">AI Tools</span>
+      <span class="tag">LLM</span>
+    </div>
+
+    <div class="project-links">
+
+      <a
+        class="project-link launch"
+        href="https://github.com/rickykhatri/rk-ai-chat-python"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="launch-icon" viewBox="0 0 24 24">
+          <path d="M14 5h5v5"></path>
+          <path d="M10 14 19 5"></path>
+          <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path>
+        </svg>
+        Launch
+      </a>
+
+      <a
+        class="project-link"
+        href="https://github.com/rickykhatri/rk-ai-chat-python"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+        </svg>
+        Source
+      </a>
+
+    </div>
+
+  </article>
+
+  <!-- 04 REST API -->
+  <article class="project-card">
+
+    <div class="project-top">
+      <div class="project-icon">04</div>
+      <span class="project-status">API</span>
+    </div>
+
+    <h3>RK AI REST API</h3>
+
+    <p>
+      A backend API layer for integrating AI capabilities into
+      external applications and services.
+    </p>
+
+    <div class="tags">
+      <span class="tag">REST</span>
+      <span class="tag">API</span>
+      <span class="tag">AI</span>
+      <span class="tag">Backend</span>
+    </div>
+
+    <div class="project-links">
+
+      <a
+        class="project-link launch"
+        href="https://rickykhatri.github.io/rk-ai-rest-api/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="launch-icon" viewBox="0 0 24 24">
+          <path d="M14 5h5v5"></path>
+          <path d="M10 14 19 5"></path>
+          <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path>
+        </svg>
+        Launch
+      </a>
+
+      <a
+        class="project-link"
+        href="https://rickykhatri.github.io/rk-ai-rest-api/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        API Docs
+      </a>
+
+    </div>
+
+  </article>
+
+  <!-- 05 Resume Builder -->
+  <article class="project-card">
+
+    <div class="project-top">
+      <div class="project-icon">05</div>
+      <span class="project-status">Web App</span>
+    </div>
+
+    <h3>RK Resume Builder</h3>
+
+    <p>
+      A modern resume-building application focused on structured
+      profile creation and generating polished professional resumes.
+    </p>
+
+    <div class="tags">
+      <span class="tag">MERN</span>
+      <span class="tag">React</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">MongoDB</span>
+    </div>
+
+    <div class="project-links">
+
+      <a
+        class="project-link launch"
+        href="https://github.com/rickykhatri/mern-repository/tree/master"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="launch-icon" viewBox="0 0 24 24">
+          <path d="M14 5h5v5"></path>
+          <path d="M10 14 19 5"></path>
+          <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path>
+        </svg>
+        Launch
+      </a>
+
+      <a
+        class="project-link"
+        href="https://github.com/rickykhatri/mern-repository/tree/master"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+        </svg>
+        Source
+      </a>
+
+    </div>
+
+  </article>
+
+  <!-- 06 AI Ecosystem -->
+  <article class="project-card">
+
+    <div class="project-top">
+      <div class="project-icon">06</div>
+      <span class="project-status">Ecosystem</span>
+    </div>
+
+    <h3>RK AI Ecosystem</h3>
+
+    <p>
+      A broader collection of AI experiments, assistants, tools
+      and supporting services built around modern AI workflows.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">AI</span>
+      <span class="tag">LLM</span>
+      <span class="tag">Automation</span>
+    </div>
+
+    <div class="project-links">
+
+      <a
+        class="project-link launch"
+        href="https://github.com/rickykhatri/rk-ai-chat-python"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="launch-icon" viewBox="0 0 24 24">
+          <path d="M14 5h5v5"></path>
+          <path d="M10 14 19 5"></path>
+          <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path>
+        </svg>
+        Launch
+      </a>
+
+      <a
+        class="project-link"
+        href="https://github.com/rickykhatri/rk-ai-chat-python"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+        </svg>
+        Source
+      </a>
+
+    </div>
+
+  </article>
+
+</div>
+
 
   </div>
 
 </section>
-
 
 <!-- =========================
      FEATURED FUEL PROJECT
@@ -1378,305 +1436,250 @@
 
   <div class="container">
 
-    <div class="featured">
 
-      <div class="featured-content">
+<div class="featured">
 
-        <div class="featured-badge">
-          Featured Product
-        </div>
+  <div class="featured-content">
 
-        <h3>
-          Fuel Bill &amp; Cash Memo Generator
-        </h3>
+    <div class="featured-badge">
+      Featured Product
+    </div>
 
-        <p class="featured-description">
-          A practical billing utility for generating professional
-          fuel bills and cash memos directly from a browser.
-          Designed for fast data entry, clean printable output
-          and everyday business use.
-        </p>
+    <h3>
+      Fuel Bill &amp; Cash Memo Generator
+    </h3>
 
-        <ul class="feature-list">
-          <li>Generate fuel bills and cash memos quickly</li>
-          <li>Professional receipt-style printable layout</li>
-          <li>Designed for simple browser-based workflows</li>
-          <li>Useful for fuel stations and billing operations</li>
-        </ul>
+    <p class="featured-description">
+      A practical billing utility for generating professional
+      fuel bills and cash memos directly from a browser.
+      Designed for fast data entry, clean printable output
+      and everyday business use.
+    </p>
 
-        <div class="tags">
+    <ul class="feature-list">
+      <li>Generate fuel bills and cash memos quickly</li>
+      <li>Professional receipt-style printable layout</li>
+      <li>Designed for simple browser-based workflows</li>
+      <li>Useful for fuel stations and billing operations</li>
+    </ul>
 
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Print Ready</span>
+    <div class="tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Print Ready</span>
+    </div>
 
-        </div>
+    <div class="project-links">
 
-        <div class="project-links">
+      <a
+        href="https://rickykhatri.github.io/rk-fuel-bill-generator/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Launch Project →
+      </a>
 
-          <a
-            href="https://rickykhatri.github.io/rk-fuel-bill-generator/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Open Project →
-          </a>
+      <a
+        href="https://github.com/rickykhatri/rk-fuel-bill-generator"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-secondary"
+      >
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+        </svg>
+        GitHub
+      </a>
 
-          <a
-            href="https://github.com/rickykhatri/rk-fuel-bill-generator"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-secondary"
-          >
-            <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
-            </svg>
-            GitHub
-          </a>
+    </div>
 
-        </div>
+  </div>
 
+  <div class="receipt-wrap">
+
+    <div class="receipt">
+
+      <div class="receipt-header">
+        <strong>RK FUEL STATION</strong>
+        <span>FUEL BILL / CASH MEMO</span>
       </div>
 
+      <div class="receipt-row muted">
+        <span>Bill No.</span>
+        <span>RK-10428</span>
+      </div>
 
-      <div class="receipt-wrap">
+      <div class="receipt-row muted">
+        <span>Date</span>
+        <span>18 Sep 2026</span>
+      </div>
 
-        <div class="receipt">
+      <div class="receipt-divider"></div>
 
-          <div class="receipt-header">
-            <strong>RK FUEL STATION</strong>
-            <span>FUEL BILL / CASH MEMO</span>
-          </div>
+      <div class="receipt-row">
+        <span>Petrol</span>
+        <span>20.00 L</span>
+      </div>
 
-          <div class="receipt-row muted">
-            <span>Bill No.</span>
-            <span>RK-10428</span>
-          </div>
+      <div class="receipt-row">
+        <span>Rate / L</span>
+        <span>₹ 103.50</span>
+      </div>
 
-          <div class="receipt-row muted">
-            <span>Date</span>
-            <span>18 Sep 2026</span>
-          </div>
+      <div class="receipt-row">
+        <span>Fuel Amount</span>
+        <span>₹ 2,070.00</span>
+      </div>
 
-          <div class="receipt-divider"></div>
+      <div class="receipt-divider"></div>
 
-          <div class="receipt-row">
-            <span>Petrol</span>
-            <span>20.00 L</span>
-          </div>
+      <div class="receipt-total">
+        <span>TOTAL</span>
+        <span>₹ 2,070.00</span>
+      </div>
 
-          <div class="receipt-row">
-            <span>Rate / L</span>
-            <span>₹ 103.50</span>
-          </div>
-
-          <div class="receipt-row">
-            <span>Fuel Amount</span>
-            <span>₹ 2,070.00</span>
-          </div>
-
-          <div class="receipt-divider"></div>
-
-          <div class="receipt-total">
-            <span>TOTAL</span>
-            <span>₹ 2,070.00</span>
-          </div>
-
-          <div class="receipt-footer">
-            Thank you for your business.
-            <br />
-            Please retain this memo for your records.
-          </div>
-
-        </div>
-
+      <div class="receipt-footer">
+        Thank you for your business.
+        <br />
+        Please retain this memo for your records.
       </div>
 
     </div>
 
   </div>
 
+</div>
+
+
+  </div>
+
 </section>
-
-
-<!-- =========================
-     CAPABILITIES
-========================= -->
 
 <section id="capabilities">
 
   <div class="container">
 
-    <div class="section-heading">
 
-      <div>
-        <div class="section-kicker">Engineering Focus</div>
-        <h2 class="section-title">Capabilities</h2>
-      </div>
+<div class="section-heading">
 
-      <p class="section-description">
-        Building systems with a focus on maintainability,
-        integration and practical user outcomes.
-      </p>
+  <div>
+    <div class="section-kicker">Engineering Focus</div>
+    <h2 class="section-title">Capabilities</h2>
+  </div>
 
-    </div>
+  <p class="section-description">
+    Building systems with a focus on maintainability,
+    integration and practical user outcomes.
+  </p>
 
+</div>
 
-    <div class="capabilities">
+<div class="capabilities">
 
-      <div class="capability">
-        <div class="capability-number">01</div>
-        <h3>Backend Engineering</h3>
-        <p>
-          REST APIs, Spring Boot services, Python applications,
-          authentication, business logic and scalable backend systems.
-        </p>
-      </div>
+  <div class="capability">
+    <div class="capability-number">01</div>
+    <h3>Backend Engineering</h3>
+    <p>
+      REST APIs, Spring Boot services, Python applications,
+      authentication, business logic and scalable backend systems.
+    </p>
+  </div>
 
-      <div class="capability">
-        <div class="capability-number">02</div>
-        <h3>AI Applications</h3>
-        <p>
-          AI assistants, LLM integrations, intelligent workflows,
-          tool calling and practical AI-powered applications.
-        </p>
-      </div>
+  <div class="capability">
+    <div class="capability-number">02</div>
+    <h3>AI Applications</h3>
+    <p>
+      AI assistants, LLM integrations, intelligent workflows,
+      tool calling and practical AI-powered applications.
+    </p>
+  </div>
 
-      <div class="capability">
-        <div class="capability-number">03</div>
-        <h3>Product Development</h3>
-        <p>
-          Turning practical requirements into usable web products,
-          internal tools, automation utilities and developer platforms.
-        </p>
-      </div>
+  <div class="capability">
+    <div class="capability-number">03</div>
+    <h3>Product Development</h3>
+    <p>
+      Turning practical requirements into usable web products,
+      internal tools, automation utilities and developer platforms.
+    </p>
+  </div>
 
-    </div>
+</div>
+
 
   </div>
 
 </section>
-
-
-<!-- =========================
-     TECHNOLOGY STACK
-========================= -->
 
 <section id="stack">
 
   <div class="container">
 
-    <div class="section-heading">
 
-      <div>
-        <div class="section-kicker">Technology</div>
-        <h2 class="section-title">Stack</h2>
-      </div>
+<div class="section-heading">
 
-      <p class="section-description">
-        A practical technology mix across backend development,
-        AI engineering, web applications and APIs.
-      </p>
+  <div>
+    <div class="section-kicker">Technology</div>
+    <h2 class="section-title">Stack</h2>
+  </div>
 
-    </div>
+  <p class="section-description">
+    A practical technology mix across backend development,
+    AI engineering, web applications and APIs.
+  </p>
 
+</div>
 
-    <div class="stack">
+<div class="stack">
 
-      <span class="stack-item">Java</span>
-      <span class="stack-item">Spring Boot</span>
-      <span class="stack-item">Python</span>
-      <span class="stack-item">FastAPI</span>
-      <span class="stack-item">REST APIs</span>
-      <span class="stack-item">WebSocket</span>
-      <span class="stack-item">React</span>
-      <span class="stack-item">Node.js</span>
-      <span class="stack-item">MongoDB</span>
-      <span class="stack-item">JavaScript</span>
-      <span class="stack-item">LLMs</span>
-      <span class="stack-item">MCP</span>
-      <span class="stack-item">Git</span>
-      <span class="stack-item">GitHub</span>
-      <span class="stack-item">Automation</span>
+  <span class="stack-item">Java</span>
+  <span class="stack-item">Spring Boot</span>
+  <span class="stack-item">Python</span>
+  <span class="stack-item">FastAPI</span>
+  <span class="stack-item">REST APIs</span>
+  <span class="stack-item">WebSocket</span>
+  <span class="stack-item">React</span>
+  <span class="stack-item">Node.js</span>
+  <span class="stack-item">MongoDB</span>
+  <span class="stack-item">JavaScript</span>
+  <span class="stack-item">LLMs</span>
+  <span class="stack-item">MCP</span>
+  <span class="stack-item">Git</span>
+  <span class="stack-item">GitHub</span>
+  <span class="stack-item">Automation</span>
 
-    </div>
+</div>
+
 
   </div>
 
 </section>
-
-
-<!-- =========================
-     CTA
-========================= -->
 
 <section id="contact">
 
   <div class="container">
 
-    <div class="cta">
 
-      <h2>Let's build something useful.</h2>
+<div class="cta">
 
-      <p>
-        Interested in backend engineering, AI applications,
-        automation or building a practical software product?
-        Let's connect.
-      </p>
+  <h2>Let's build something useful.</h2>
 
-      <div class="hero-actions" style="justify-content:center;">
+  <p>
+    Interested in backend engineering, AI applications,
+    automation or building a practical software product?
+    Let's connect.
+  </p>
 
-        <a
-          href="https://github.com/rickykhatri"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary"
-        >
-          View GitHub →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-  </main>
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-
-<div class="container footer-inner">
-
-  <div class="footer-copy">
-    © 2026 RK Projects. Built with clean code and practical engineering.
-  </div>
-
-  <div class="footer-links">
+  <div class="hero-actions" style="justify-content:center;">
 
     <a
       href="https://github.com/rickykhatri"
       target="_blank"
       rel="noopener noreferrer"
+      class="btn btn-primary"
     >
-      GitHub
-    </a>
-
-    <a href="#projects">
-      Projects
-    </a>
-
-    <a href="#stack">
-      Stack
+      View GitHub →
     </a>
 
   </div>
@@ -1684,7 +1687,45 @@
 </div>
 
 
-  </footer>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="container footer-inner">
+
+
+<div class="footer-copy">
+  © 2026 RK Projects. Built with clean code and practical engineering.
+</div>
+
+<div class="footer-links">
+
+  <a
+    href="https://github.com/rickykhatri"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub
+  </a>
+
+  <a href="#projects">
+    Projects
+  </a>
+
+  <a href="#stack">
+    Stack
+  </a>
+
+</div>
+
+
+  </div>
+
+</footer>
 
 </body>
 </html>
