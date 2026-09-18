@@ -5,49 +5,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>RK Projects | Ricky Khatri</title>
+  <title>RK Projects — Software Engineer Portfolio</title>
 
 <meta
  name="description"
- content="RK Projects — AI, full-stack, backend, API, MCP and business application projects by Ricky Khatri."
+ content="RK Projects — Backend engineering, AI systems, APIs, MCP servers, automation and practical software products."
 />
-
-  <meta name="author" content="Ricky Khatri" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root {
-      --bg: #070b14;
-      --bg-soft: #0b1120;
-      --card: rgba(15, 23, 42, 0.72);
-      --card-hover: rgba(20, 30, 52, 0.9);
-      --border: rgba(148, 163, 184, 0.16);
-      --border-hover: rgba(96, 165, 250, 0.45);
+      --bg: #0e1110;
+      --bg-soft: #141816;
+      --surface: #191e1b;
+      --surface-2: #202622;
 
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --muted-light: #cbd5e1;
+      --text: #f3f0e7;
+      --text-soft: #d2d0c7;
+      --muted: #969c95;
 
-      --blue: #60a5fa;
-      --blue-dark: #2563eb;
-      --cyan: #22d3ee;
-      --purple: #a78bfa;
-      --green: #34d399;
-      --orange: #fb923c;
-      --pink: #f472b6;
+      --accent: #a7b895;
+      --accent-strong: #899f78;
+      --accent-dark: #5f7354;
 
-      --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+      --gold: #c9b98a;
+
+      --border: rgba(243, 240, 231, 0.09);
+      --border-strong: rgba(167, 184, 149, 0.28);
+
+      --success: #91aa7d;
+
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.18);
 
       --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 10px;
+      --radius-md: 17px;
+      --radius-sm: 11px;
+
+      --max-width: 1180px;
     }
 
     * {
@@ -64,9 +65,16 @@
       min-height: 100vh;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.14), transparent 30%),
-        radial-gradient(circle at 90% 15%, rgba(167, 139, 250, 0.12), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(34, 211, 238, 0.08), transparent 30%),
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(167, 184, 149, 0.07),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(201, 185, 138, 0.035),
+          transparent 25%
+        ),
         var(--bg);
       font-family: "Inter", sans-serif;
       line-height: 1.6;
@@ -78,13 +86,20 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.22;
-      background-image:
-        linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, black, transparent 85%);
       z-index: -1;
+      opacity: 0.4;
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px
+        );
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
     }
 
     a {
@@ -92,105 +107,126 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
-      width: min(1180px, calc(100% - 40px));
+      width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       HEADER
+    ========================= */
 
-    .navbar {
+    header {
       position: sticky;
       top: 0;
       z-index: 100;
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: rgba(7, 11, 20, 0.72);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+      background: rgba(14, 17, 16, 0.82);
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav-inner {
-      min-height: 72px;
+    .nav {
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 30px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
       letter-spacing: -0.03em;
     }
 
     .brand-mark {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
       border-radius: 12px;
-      background:
-        linear-gradient(135deg, var(--blue-dark), var(--purple));
-      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-      font-size: 15px;
+      background: var(--accent);
+      color: #111510;
+      font-weight: 800;
+      box-shadow: 0 8px 25px rgba(167, 184, 149, 0.12);
     }
 
-    .brand-text {
+    .brand span:last-child {
       font-size: 17px;
     }
 
-    .brand-text span {
-      color: var(--blue);
-    }
-
-    .nav-links {
+    nav {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 28px;
     }
 
-    .nav-links a {
+    nav a {
       color: var(--muted);
-      padding: 9px 13px;
-      border-radius: 9px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       transition: 0.25s ease;
     }
 
-    .nav-links a:hover {
+    nav a:hover {
       color: var(--text);
-      background: rgba(148, 163, 184, 0.08);
     }
 
-    /* HERO */
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      color: var(--text);
+      background: rgba(167, 184, 149, 0.05);
+    }
+
+    .nav-cta:hover {
+      background: rgba(167, 184, 149, 0.1);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      min-height: 690px;
-      display: flex;
-      align-items: center;
-      padding: 90px 0 70px;
+      padding: 115px 0 95px;
       position: relative;
     }
 
-    .hero-content {
-      max-width: 850px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      right: -250px;
+      top: 20px;
+      background: rgba(167, 184, 149, 0.035);
+      filter: blur(60px);
+      pointer-events: none;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
+      gap: 9px;
+      padding: 7px 11px;
       margin-bottom: 24px;
-      border: 1px solid rgba(96, 165, 250, 0.2);
+      border: 1px solid var(--border);
       border-radius: 999px;
-      background: rgba(37, 99, 235, 0.08);
-      color: #93c5fd;
+      color: var(--text-soft);
+      background: rgba(255, 255, 255, 0.025);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -199,36 +235,28 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 14px var(--green);
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(145, 170, 125, 0.08);
     }
 
     .hero h1 {
       max-width: 900px;
-      font-size: clamp(46px, 7vw, 82px);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(48px, 7vw, 88px);
       line-height: 0.98;
       letter-spacing: -0.065em;
-      margin-bottom: 26px;
+      margin-bottom: 27px;
     }
 
-    .gradient-text {
-      background: linear-gradient(
-        110deg,
-        #fff 10%,
-        #93c5fd 42%,
-        #a78bfa 72%,
-        #67e8f9
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .hero h1 span {
+      color: var(--accent);
     }
 
-    .hero-description {
-      max-width: 700px;
+    .hero-copy {
+      max-width: 690px;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.8;
+      line-height: 1.75;
       margin-bottom: 34px;
     }
 
@@ -246,15 +274,13 @@
       min-height: 46px;
       padding: 0 18px;
       border-radius: 11px;
-      border: 1px solid transparent;
       font-size: 14px;
       font-weight: 700;
+      border: 1px solid transparent;
       transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
-      cursor: pointer;
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .btn:hover {
@@ -262,65 +288,67 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--blue-dark), #4f46e5);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+      color: #121611;
+      background: var(--accent);
+      box-shadow: 0 10px 28px rgba(167, 184, 149, 0.11);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.38);
+      background: #b7c5a8;
     }
 
     .btn-secondary {
-      background: rgba(15, 23, 42, 0.65);
+      color: var(--text-soft);
       border-color: var(--border);
-      color: var(--muted-light);
+      background: rgba(255, 255, 255, 0.025);
     }
 
     .btn-secondary:hover {
-      border-color: var(--border-hover);
       color: var(--text);
-      background: rgba(30, 41, 59, 0.7);
+      border-color: var(--border-strong);
+      background: rgba(255, 255, 255, 0.045);
     }
 
-    .github-icon {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-    }
-
-    /* STATS */
+    /* =========================
+       STATS
+    ========================= */
 
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 55px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .stat {
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: rgba(15, 23, 42, 0.48);
-      backdrop-filter: blur(12px);
+      padding: 28px 22px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: 0;
     }
 
     .stat-number {
-      font-size: 27px;
-      font-weight: 800;
-      letter-spacing: -0.04em;
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text);
     }
 
     .stat-label {
       color: var(--muted);
-      font-size: 12px;
-      margin-top: 4px;
+      font-size: 13px;
     }
 
-    /* SECTION */
+    /* =========================
+       SECTION
+    ========================= */
 
     section {
-      padding: 100px 0;
+      padding: 105px 0;
     }
 
     .section-heading {
@@ -328,36 +356,38 @@
       align-items: end;
       justify-content: space-between;
       gap: 30px;
-      margin-bottom: 38px;
+      margin-bottom: 40px;
     }
 
-    .section-heading h2 {
-      font-size: clamp(30px, 4vw, 48px);
+    .section-kicker {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(31px, 4vw, 48px);
       line-height: 1.05;
       letter-spacing: -0.045em;
     }
 
-    .section-heading p {
-      max-width: 520px;
+    .section-description {
+      max-width: 500px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    .section-kicker {
-      color: var(--blue);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    /* PROJECT GRID */
+    /* =========================
+       PROJECT GRID
+    ========================= */
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
@@ -370,394 +400,431 @@
       background:
         linear-gradient(
           145deg,
-          rgba(15, 23, 42, 0.84),
-          rgba(9, 14, 26, 0.75)
-        );
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.16);
+          rgba(255, 255, 255, 0.025),
+          rgba(255, 255, 255, 0.008)
+        ),
+        var(--surface);
+      box-shadow: var(--shadow-soft);
       transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
     }
 
     .project-card::before {
       content: "";
       position: absolute;
-      width: 160px;
-      height: 160px;
-      right: -80px;
-      top: -80px;
+      width: 190px;
+      height: 190px;
+      top: -110px;
+      right: -100px;
       border-radius: 50%;
-      background: var(--accent, var(--blue));
-      opacity: 0.08;
+      background: rgba(167, 184, 149, 0.045);
       filter: blur(10px);
+      transition: 0.3s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-hover);
-      background: var(--card-hover);
+      transform: translateY(-5px);
+      border-color: var(--border-strong);
+      background: var(--surface-2);
     }
 
-    .project-card.featured {
-      grid-column: span 2;
-      padding: 34px;
-      border-color: rgba(96, 165, 250, 0.25);
-      background:
-        radial-gradient(
-          circle at 100% 0%,
-          rgba(37, 99, 235, 0.12),
-          transparent 35%
-        ),
-        linear-gradient(
-          145deg,
-          rgba(15, 23, 42, 0.92),
-          rgba(9, 14, 26, 0.82)
-        );
+    .project-card:hover::before {
+      transform: scale(1.25);
     }
 
     .project-top {
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
-      gap: 18px;
-      margin-bottom: 20px;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 22px;
     }
 
     .project-icon {
-      width: 52px;
-      height: 52px;
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
-      border-radius: 15px;
-      background: rgba(96, 165, 250, 0.09);
-      border: 1px solid rgba(96, 165, 250, 0.15);
-      font-size: 24px;
+      border-radius: 13px;
+      color: var(--accent);
+      background: rgba(167, 184, 149, 0.08);
+      border: 1px solid rgba(167, 184, 149, 0.12);
     }
 
     .project-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       padding: 5px 9px;
+      border: 1px solid rgba(145, 170, 125, 0.16);
       border-radius: 999px;
-      background: rgba(52, 211, 153, 0.08);
-      color: #6ee7b7;
-      border: 1px solid rgba(52, 211, 153, 0.13);
-      font-size: 10px;
+      color: var(--success);
+      background: rgba(145, 170, 125, 0.055);
+      font-size: 11px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: currentColor;
     }
 
     .project-card h3 {
+      font-family: "Space Grotesk", sans-serif;
       font-size: 23px;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.03em;
       margin-bottom: 9px;
     }
 
     .project-card p {
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.75;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
 
-    .tech-list {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
       margin-bottom: 22px;
     }
 
-    .tech {
-      padding: 5px 9px;
+    .tag {
+      padding: 6px 9px;
+      border: 1px solid var(--border);
       border-radius: 7px;
-      background: rgba(148, 163, 184, 0.06);
-      border: 1px solid rgba(148, 163, 184, 0.1);
-      color: #b8c5d6;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px;
+      color: var(--text-soft);
+      background: rgba(255, 255, 255, 0.025);
+      font-size: 11px;
+      font-weight: 600;
     }
 
-    .project-actions {
+    .project-links {
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
     }
 
-    .project-actions .btn {
-      min-height: 40px;
-      padding: 0 14px;
-      font-size: 12px;
-    }
-
-    /* FEATURED FUEL */
-
-    .fuel-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+    .project-link {
+      display: inline-flex;
       align-items: center;
+      gap: 7px;
+      min-height: 37px;
+      padding: 0 12px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      color: var(--text-soft);
+      background: rgba(255, 255, 255, 0.02);
+      font-size: 12px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .project-link:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+      background: rgba(167, 184, 149, 0.06);
+    }
+
+    .github-icon {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* =========================
+       FEATURED PROJECT
+    ========================= */
+
+    .featured {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 45px;
+      padding: 42px;
+      border: 1px solid rgba(167, 184, 149, 0.18);
+      border-radius: 28px;
+      background:
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(167, 184, 149, 0.08),
+          transparent 32%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.008)
+        ),
+        var(--surface);
+      box-shadow: var(--shadow);
     }
 
-    .fuel-copy h3 {
-      font-size: clamp(32px, 4vw, 54px);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      margin-bottom: 18px;
+    .featured::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.025) 50%,
+          transparent 100%
+        );
+      opacity: 0.4;
     }
 
-    .fuel-copy > p {
+    .featured-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      padding: 7px 10px;
+      margin-bottom: 19px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(167, 184, 149, 0.08);
+      border: 1px solid rgba(167, 184, 149, 0.14);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .featured h3 {
+      max-width: 600px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(31px, 4vw, 47px);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+      margin-bottom: 17px;
+    }
+
+    .featured-description {
+      max-width: 600px;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 25px;
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 23px;
     }
 
     .feature-list {
       list-style: none;
       display: grid;
-      gap: 11px;
-      margin-bottom: 28px;
+      gap: 10px;
+      margin-bottom: 27px;
     }
 
     .feature-list li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      color: var(--muted-light);
-      font-size: 14px;
+      color: var(--text-soft);
+      font-size: 13px;
     }
 
-    .feature-check {
+    .feature-list li::before {
+      content: "✓";
       flex: 0 0 auto;
-      width: 20px;
-      height: 20px;
-      display: grid;
-      place-items: center;
-      border-radius: 6px;
-      background: rgba(52, 211, 153, 0.1);
-      color: var(--green);
-      font-size: 11px;
-      margin-top: 1px;
-    }
-
-    /* RECEIPT */
-
-    .receipt-wrap {
-      position: relative;
-    }
-
-    .receipt-glow {
-      position: absolute;
-      inset: 15% -10%;
-      background: linear-gradient(
-        120deg,
-        rgba(37, 99, 235, 0.22),
-        rgba(167, 139, 250, 0.2)
-      );
-      filter: blur(55px);
-      z-index: -1;
-    }
-
-    .receipt {
-      color: #172033;
-      background: #f7f4ea;
-      border-radius: 5px;
-      padding: 25px;
-      box-shadow:
-        0 35px 80px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-      transform: rotate(1.2deg);
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    .receipt-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding-bottom: 13px;
-      border-bottom: 2px dashed #727272;
-    }
-
-    .receipt-logo {
-      width: 43px;
-      height: 43px;
-      display: grid;
-      place-items: center;
-      border: 2px solid #333;
-      border-radius: 50%;
-      font-size: 11px;
+      color: var(--accent);
       font-weight: 800;
     }
 
-    .receipt-title {
-      text-align: center;
-      flex: 1;
-    }
+    /* =========================
+       RECEIPT PREVIEW
+    ========================= */
 
-    .receipt-title strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .receipt-title span {
-      font-size: 8px;
-    }
-
-    .receipt-meta {
+    .receipt-wrap {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7px;
-      padding: 13px 0;
-      border-bottom: 1px solid #aaa;
-      font-size: 8px;
+      place-items: center;
+      min-height: 390px;
     }
 
-    .receipt-line {
+    .receipt {
+      width: min(100%, 360px);
+      padding: 27px 24px;
+      color: #20231f;
+      background: #eee9dc;
+      border-radius: 5px;
+      box-shadow:
+        0 35px 70px rgba(0, 0, 0, 0.32),
+        0 5px 10px rgba(0, 0, 0, 0.16);
+      transform: rotate(1.2deg);
+    }
+
+    .receipt-header {
+      text-align: center;
+      padding-bottom: 17px;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed rgba(32, 35, 31, 0.28);
+    }
+
+    .receipt-header strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 19px;
+      letter-spacing: 0.03em;
+      margin-bottom: 3px;
+    }
+
+    .receipt-header span {
+      font-size: 10px;
+      color: #686c64;
+    }
+
+    .receipt-row {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
-      padding: 8px 0;
-      border-bottom: 1px dashed #aaa;
-      font-size: 8px;
+      gap: 15px;
+      padding: 6px 0;
+      font-size: 11px;
+    }
+
+    .receipt-row.muted {
+      color: #6b6e68;
+    }
+
+    .receipt-divider {
+      height: 1px;
+      margin: 10px 0;
+      border-top: 1px dashed rgba(32, 35, 31, 0.22);
     }
 
     .receipt-total {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      margin-top: 13px;
-      padding-top: 13px;
-      border-top: 2px solid #222;
-      font-size: 11px;
-      font-weight: 800;
+      padding-top: 8px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
     }
 
-    .receipt-sign {
-      margin-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 8px;
+    .receipt-footer {
+      padding-top: 18px;
+      margin-top: 16px;
+      border-top: 1px dashed rgba(32, 35, 31, 0.22);
+      color: #777a73;
+      text-align: center;
+      font-size: 9px;
     }
 
-    /* CAPABILITIES */
+    /* =========================
+       CAPABILITIES
+    ========================= */
 
     .capabilities {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
+      gap: 16px;
     }
 
     .capability {
-      padding: 24px;
+      padding: 25px;
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      background: rgba(15, 23, 42, 0.5);
-      transition: 0.25s ease;
+      background: rgba(255, 255, 255, 0.018);
     }
 
-    .capability:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-3px);
+    .capability-number {
+      color: var(--accent);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 25px;
     }
 
-    .capability-icon {
-      font-size: 22px;
-      margin-bottom: 14px;
-    }
-
-    .capability h4 {
-      font-size: 15px;
-      margin-bottom: 7px;
+    .capability h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 20px;
+      margin-bottom: 9px;
     }
 
     .capability p {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 13px;
       line-height: 1.7;
     }
 
-    /* TECHNOLOGY */
+    /* =========================
+       TECH STACK
+    ========================= */
 
     .stack {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      max-width: 850px;
-      margin: 0 auto;
+      gap: 9px;
     }
 
     .stack-item {
-      padding: 10px 15px;
+      padding: 10px 13px;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      background: rgba(15, 23, 42, 0.62);
-      color: var(--muted-light);
-      font-size: 13px;
+      border-radius: 9px;
+      color: var(--text-soft);
+      background: rgba(255, 255, 255, 0.018);
+      font-size: 12px;
       font-weight: 600;
-      transition: 0.25s ease;
+      transition: 0.2s ease;
     }
 
     .stack-item:hover {
       color: var(--text);
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
+      border-color: var(--border-strong);
+      background: rgba(167, 184, 149, 0.055);
     }
 
-    /* CTA */
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
       position: relative;
       overflow: hidden;
+      padding: 70px 40px;
       text-align: center;
-      padding: 75px 30px;
-      border: 1px solid rgba(96, 165, 250, 0.18);
-      border-radius: 30px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
       background:
         radial-gradient(
           circle at 50% 0%,
-          rgba(96, 165, 250, 0.15),
-          transparent 50%
+          rgba(167, 184, 149, 0.10),
+          transparent 45%
         ),
-        rgba(15, 23, 42, 0.55);
+        var(--surface);
     }
 
     .cta h2 {
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(32px, 4vw, 50px);
+      letter-spacing: -0.045em;
+      margin-bottom: 13px;
     }
 
     .cta p {
-      max-width: 600px;
-      margin: 0 auto 27px;
+      position: relative;
+      z-index: 1;
+      max-width: 590px;
+      margin: 0 auto 26px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 35px 0 45px;
-      border-top: 1px solid rgba(148, 163, 184, 0.08);
+      border-top: 1px solid var(--border);
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 25px;
     }
 
     .footer-copy {
@@ -765,145 +832,127 @@
       font-size: 12px;
     }
 
-    .footer-copy strong {
-      color: var(--muted-light);
-    }
-
     .footer-links {
       display: flex;
-      gap: 14px;
+      gap: 18px;
     }
 
     .footer-links a {
       color: var(--muted);
       font-size: 12px;
+      transition: 0.2s ease;
     }
 
     .footer-links a:hover {
       color: var(--text);
     }
 
-    /* REVEAL ANIMATION */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: reveal 0.75s ease forwards;
-    }
-
-    .delay-1 {
-      animation-delay: 0.08s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.16s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.24s;
-    }
-
-    @keyframes reveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* RESPONSIVE */
+    /* =========================
+       RESPONSIVE
+    ========================= */
 
     @media (max-width: 900px) {
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .receipt-wrap {
+        min-height: auto;
+      }
+
+      .capabilities {
+        grid-template-columns: 1fr;
+      }
+
       .stats {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .projects-grid {
-        grid-template-columns: 1fr;
+      .stat:nth-child(2) {
+        border-right: 0;
       }
 
-      .project-card.featured {
-        grid-column: span 1;
-      }
-
-      .fuel-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .capabilities {
-        grid-template-columns: repeat(2, 1fr);
+      .stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
       .container {
-        width: min(100% - 28px, 1180px);
+        width: min(var(--max-width), calc(100% - 28px));
       }
 
-      .nav-links {
+      nav a:not(.nav-cta) {
         display: none;
       }
 
       .hero {
-        min-height: auto;
-        padding: 75px 0 55px;
+        padding: 80px 0 70px;
       }
 
-      .hero h1 {
-        font-size: clamp(42px, 14vw, 65px);
-      }
-
-      .hero-description {
+      .hero-copy {
         font-size: 16px;
       }
 
       section {
-        padding: 70px 0;
+        padding: 75px 0;
       }
 
       .section-heading {
         display: block;
       }
 
-      .section-heading p {
-        margin-top: 13px;
+      .section-description {
+        margin-top: 15px;
       }
 
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .project-card,
-      .project-card.featured {
-        padding: 22px;
-      }
-
-      .capabilities {
+      .projects-grid {
         grid-template-columns: 1fr;
+      }
+
+      .featured {
+        padding: 27px;
+        border-radius: 22px;
+      }
+
+      .receipt {
+        transform: none;
       }
 
       .footer-inner {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
       }
     }
 
-    @media (max-width: 460px) {
+    @media (max-width: 500px) {
       .stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        padding: 22px 14px;
+      }
+
+      .stat-number {
+        font-size: 25px;
+      }
+
+      .project-card {
+        padding: 22px;
+      }
+
+      .cta {
+        padding: 50px 22px;
       }
 
       .hero-actions,
-      .project-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn,
-      .project-actions .btn {
+      .project-links {
         width: 100%;
       }
 
-      .receipt {
-        padding: 18px;
+      .hero-actions .btn {
+        flex: 1;
       }
     }
   </style>
@@ -912,109 +961,108 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-  <header class="navbar">
-    <div class="container nav-inner">
+  <header>
+    <div class="container nav">
 
-```
-  <a href="#top" class="brand">
-    <div class="brand-mark">RK</div>
-    <div class="brand-text">
-      RK <span>Projects</span>
-    </div>
+
+  <a href="#" class="brand">
+    <span class="brand-mark">RK</span>
+    <span>RK Projects</span>
   </a>
 
-  <nav class="nav-links">
+  <nav>
     <a href="#projects">Projects</a>
-    <a href="#fuel">Featured</a>
-    <a href="#stack">Tech Stack</a>
-    <a href="#contact">Contact</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#stack">Stack</a>
+    <a href="#contact" class="nav-cta">Contact</a>
   </nav>
 
 </div>
-```
+
 
   </header>
 
-  <main id="top">
+  <main>
 
-```
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
   <div class="container">
 
-    <div class="hero-content">
-
-      <div class="eyebrow reveal">
-        <span class="eyebrow-dot"></span>
-        Software Engineering Portfolio
-      </div>
-
-      <h1 class="reveal delay-1">
-        Building
-        <span class="gradient-text">practical software</span>
-        with AI, APIs & modern web technology.
-      </h1>
-
-      <p class="hero-description reveal delay-2">
-        Welcome to RK Projects — a collection of AI applications,
-        backend services, APIs, MCP tooling, full-stack applications
-        and business-focused software built by Ricky Khatri.
-      </p>
-
-      <div class="hero-actions reveal delay-3">
-
-        <a href="#projects" class="btn btn-primary">
-          Explore Projects
-          <span>↓</span>
-        </a>
-
-        <a
-          href="https://github.com/rickykhatri"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-secondary"
-        >
-          <svg class="github-icon" viewBox="0 0 24 24">
-            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
-          </svg>
-          GitHub
-        </a>
-
-      </div>
-
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Software Engineering Portfolio
     </div>
 
-    <div class="stats reveal delay-3">
+    <h1>
+      Building useful software with
+      <span>clean engineering.</span>
+    </h1>
 
-      <div class="stat">
-        <div class="stat-number">7+</div>
-        <div class="stat-label">Featured Projects</div>
-      </div>
+    <p class="hero-copy">
+      A collection of backend systems, AI applications, APIs,
+      automation tools and practical software products built with
+      modern engineering practices.
+    </p>
 
-      <div class="stat">
-        <div class="stat-number">AI</div>
-        <div class="stat-label">AI & Automation</div>
-      </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">
+        Explore Projects →
+      </a>
 
-      <div class="stat">
-        <div class="stat-number">API</div>
-        <div class="stat-label">Backend Services</div>
-      </div>
-
-      <div class="stat">
-        <div class="stat-number">Web</div>
-        <div class="stat-label">Modern Applications</div>
-      </div>
-
+      <a href="#contact" class="btn btn-secondary">
+        Get in Touch
+      </a>
     </div>
 
   </div>
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="container">
+
+  <div class="stats">
+
+    <div class="stat">
+      <span class="stat-number">07+</span>
+      <span class="stat-label">Featured Projects</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number">AI</span>
+      <span class="stat-label">Intelligent Systems</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number">API</span>
+      <span class="stat-label">Backend Engineering</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number">MCP</span>
+      <span class="stat-label">AI Tooling</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
 <section id="projects">
 
   <div class="container">
@@ -1022,13 +1070,14 @@
     <div class="section-heading">
 
       <div>
-        <div class="section-kicker">01 / Projects</div>
-        <h2>Selected work</h2>
+        <div class="section-kicker">Selected Work</div>
+        <h2 class="section-title">Projects</h2>
       </div>
 
-      <p>
-        A selection of applications and engineering projects covering
-        AI, Java, Python, APIs, MCP, MERN and business automation.
+      <p class="section-description">
+        Practical products and engineering experiments covering
+        backend development, AI, APIs, automation and modern web
+        applications.
       </p>
 
     </div>
@@ -1036,57 +1085,46 @@
 
     <div class="projects-grid">
 
-      <!-- SMART CHAT -->
-      <article class="project-card" style="--accent:#60a5fa">
+      <!-- Smart Chat -->
+
+      <article class="project-card">
 
         <div class="project-top">
 
-          <div class="project-icon">💬</div>
+          <div class="project-icon">01</div>
 
-          <div class="project-status">
-            <span class="status-dot"></span>
+          <span class="project-status">
             Live
-          </div>
+          </span>
 
         </div>
 
         <h3>RK Smart Chat</h3>
 
         <p>
-          A smart conversational application backed by a Spring Boot
-          ecosystem, designed around modern backend architecture,
-          APIs and interactive chat capabilities.
+          A Spring Boot based intelligent chat application focused
+          on real-time communication and scalable backend architecture.
         </p>
 
-        <div class="tech-list">
-          <span class="tech">Spring Boot</span>
-          <span class="tech">Java</span>
-          <span class="tech">REST API</span>
-          <span class="tech">AI</span>
-          <span class="tech">Backend</span>
+        <div class="tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Java</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">AI</span>
         </div>
 
-        <div class="project-actions">
+        <div class="project-links">
 
           <a
-            href="https://rksmartchat.onrender.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Live Demo ↗
-          </a>
-
-          <a
+            class="project-link"
             href="https://github.com/rickykhatri/rk-smart-chat-springboot"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary"
           >
             <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
             </svg>
-            GitHub
+            Source
           </a>
 
         </div>
@@ -1094,57 +1132,46 @@
       </article>
 
 
-      <!-- AI ASSISTANT -->
-      <article class="project-card" style="--accent:#a78bfa">
+      <!-- AI Assistant -->
+
+      <article class="project-card">
 
         <div class="project-top">
 
-          <div class="project-icon">🤖</div>
+          <div class="project-icon">02</div>
 
-          <div class="project-status">
-            <span class="status-dot"></span>
-            Live
-          </div>
+          <span class="project-status">
+            AI
+          </span>
 
         </div>
 
         <h3>RK AI Assistant</h3>
 
         <p>
-          An AI-powered conversational assistant with a Python-based
-          backend and frontend, built to provide intelligent interaction
-          and extensible AI capabilities.
+          A Python-based AI assistant designed to connect intelligent
+          language capabilities with practical application workflows.
         </p>
 
-        <div class="tech-list">
-          <span class="tech">Python</span>
-          <span class="tech">AI</span>
-          <span class="tech">LLM</span>
-          <span class="tech">REST</span>
-          <span class="tech">Web</span>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">LLM</span>
+          <span class="tag">AI</span>
+          <span class="tag">Automation</span>
         </div>
 
-        <div class="project-actions">
+        <div class="project-links">
 
           <a
-            href="https://rkchat-ai.duckdns.org/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Open Assistant ↗
-          </a>
-
-          <a
+            class="project-link"
             href="https://github.com/rickykhatri/rk-ai-chat-python"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary"
           >
             <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
             </svg>
-            GitHub
+            Source
           </a>
 
         </div>
@@ -1152,111 +1179,46 @@
       </article>
 
 
-      <!-- AI REST API -->
-      <article class="project-card" style="--accent:#22d3ee">
+      <!-- MCP Server -->
+
+      <article class="project-card">
 
         <div class="project-top">
 
-          <div class="project-icon">⚡</div>
+          <div class="project-icon">03</div>
 
-          <div class="project-status">
-            <span class="status-dot"></span>
-            API
-          </div>
-
-        </div>
-
-        <h3>RK AI REST API</h3>
-
-        <p>
-          API services powering the RK AI ecosystem. Explore the
-          interactive API documentation and available backend endpoints.
-        </p>
-
-        <div class="tech-list">
-          <span class="tech">REST</span>
-          <span class="tech">Python</span>
-          <span class="tech">AI</span>
-          <span class="tech">JSON</span>
-          <span class="tech">API</span>
-        </div>
-
-        <div class="project-actions">
-
-          <a
-            href="https://rkchat-ai.duckdns.org/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            API Docs ↗
-          </a>
-
-          <a
-            href="https://rkchat-ai.duckdns.org/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-secondary"
-          >
-            AI Platform ↗
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- MCP -->
-      <article class="project-card" style="--accent:#f472b6">
-
-        <div class="project-top">
-
-          <div class="project-icon">🔌</div>
-
-          <div class="project-status">
-            <span class="status-dot"></span>
+          <span class="project-status">
             MCP
-          </div>
+          </span>
 
         </div>
 
         <h3>RK MCP Server</h3>
 
         <p>
-          Model Context Protocol server functionality integrated into
-          the RK AI Python project, enabling AI systems to work with
-          structured tools and context.
+          A Model Context Protocol server for exposing tools and
+          capabilities to AI systems through a structured interface.
         </p>
 
-        <div class="tech-list">
-          <span class="tech">MCP</span>
-          <span class="tech">Python</span>
-          <span class="tech">AI</span>
-          <span class="tech">Tools</span>
-          <span class="tech">Context</span>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">MCP</span>
+          <span class="tag">AI Tools</span>
+          <span class="tag">LLM</span>
         </div>
 
-        <div class="project-actions">
+        <div class="project-links">
 
           <a
-            href="https://rkchat-ai.duckdns.org/mcp"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            MCP Endpoint ↗
-          </a>
-
-          <a
+            class="project-link"
             href="https://github.com/rickykhatri/rk-ai-chat-python"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary"
           >
             <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
             </svg>
-            GitHub
+            Source
           </a>
 
         </div>
@@ -1264,57 +1226,90 @@
       </article>
 
 
-      <!-- RESUME BUILDER -->
-      <article class="project-card" style="--accent:#34d399">
+      <!-- REST API -->
+
+      <article class="project-card">
 
         <div class="project-top">
 
-          <div class="project-icon">📄</div>
+          <div class="project-icon">04</div>
 
-          <div class="project-status">
-            <span class="status-dot"></span>
-            Live
-          </div>
+          <span class="project-status">
+            API
+          </span>
+
+        </div>
+
+        <h3>RK AI REST API</h3>
+
+        <p>
+          A backend API layer for integrating AI capabilities into
+          external applications and services.
+        </p>
+
+        <div class="tags">
+          <span class="tag">REST</span>
+          <span class="tag">API</span>
+          <span class="tag">AI</span>
+          <span class="tag">Backend</span>
+        </div>
+
+        <div class="project-links">
+
+          <a
+            class="project-link"
+            href="https://rickykhatri.github.io/rk-ai-rest-api/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live API →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- Resume Builder -->
+
+      <article class="project-card">
+
+        <div class="project-top">
+
+          <div class="project-icon">05</div>
+
+          <span class="project-status">
+            Web App
+          </span>
 
         </div>
 
         <h3>RK Resume Builder</h3>
 
         <p>
-          A web-based resume builder designed to help users create
-          structured, professional resumes through an interactive
-          application experience.
+          A modern resume-building application focused on structured
+          profile creation and generating polished professional resumes.
         </p>
 
-        <div class="tech-list">
-          <span class="tech">MERN</span>
-          <span class="tech">React</span>
-          <span class="tech">Node.js</span>
-          <span class="tech">Express</span>
-          <span class="tech">MongoDB</span>
+        <div class="tags">
+          <span class="tag">MERN</span>
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span>
         </div>
 
-        <div class="project-actions">
+        <div class="project-links">
 
           <a
-            href="https://rk-resume-builder-frontend.onrender.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Open Builder ↗
-          </a>
-
-          <a
+            class="project-link"
             href="https://github.com/rickykhatri/mern-repository/tree/master"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary"
           >
             <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
             </svg>
-            GitHub
+            Source
           </a>
 
         </div>
@@ -1322,227 +1317,47 @@
       </article>
 
 
-      <!-- AI ECOSYSTEM -->
-      <article class="project-card" style="--accent:#fb923c">
+      <!-- AI Ecosystem -->
+
+      <article class="project-card">
 
         <div class="project-top">
 
-          <div class="project-icon">🧠</div>
+          <div class="project-icon">06</div>
 
-          <div class="project-status">
-            <span class="status-dot"></span>
+          <span class="project-status">
             Ecosystem
-          </div>
+          </span>
 
         </div>
 
         <h3>RK AI Ecosystem</h3>
 
         <p>
-          A connected collection of AI applications, services, APIs and
-          tooling forming a broader ecosystem around conversational AI
-          and intelligent software.
+          A broader collection of AI experiments, assistants, tools
+          and supporting services built around modern AI workflows.
         </p>
 
-        <div class="tech-list">
-          <span class="tech">AI</span>
-          <span class="tech">Python</span>
-          <span class="tech">APIs</span>
-          <span class="tech">MCP</span>
-          <span class="tech">Automation</span>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">AI</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Automation</span>
         </div>
 
-        <div class="project-actions">
+        <div class="project-links">
 
           <a
-            href="https://rkchat-ai.duckdns.org/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Explore Ecosystem ↗
-          </a>
-
-          <a
+            class="project-link"
             href="https://github.com/rickykhatri/rk-ai-chat-python"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary"
           >
             <svg class="github-icon" viewBox="0 0 24 24">
-              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c0-.31-.21-.67-.79-.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5s11.5 5.15 11.5 11.5c0 5.08-3.29 9.39-7.86 10.91-.58.11-.8-.25-.8-.56v-3.23c0-1.1-.37-1.82-.78-2.18 2.56-.28 5.25-1.26 5.25-5.69 0-1.26-.45-2.29-1.18-3.1.12-.29.51-1.47-.11-3.06 0 0-.96-.31-3.15 1.18a10.94 10.94 0 0 0-5.74 0C6.94 4.78 5.98 5.09 5.98 5.09c-.62 1.59-.23 2.77-.11 3.06-.73.81-1.18 1.84-1.18 3.1 0 4.42 2.68 5.41 5.23 5.7-.33.28-.63.78-.73 1.52-.65.29-2.31.8-3.33-.95 0 0-.6-1.1-1.75-1.18 0 0-1.12-.01-.08.7 0 0 .75.36 1.28 1.69 0 0 .68 2.24 3.88 1.54v2.17c0 .31-.21.67-.79.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5z"/>
+              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
             </svg>
-            GitHub
+            Source
           </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- FUEL BILL -->
-      <article class="project-card featured" id="fuel" style="--accent:#60a5fa">
-
-        <div class="fuel-layout">
-
-          <div class="fuel-copy">
-
-            <div class="section-kicker">Featured Project</div>
-
-            <h3>
-              Fuel Bill &
-              <span class="gradient-text">Cash Memo Generator</span>
-            </h3>
-
-            <p>
-              A modern printable fuel-station cash and credit memo
-              generator built for practical business use. It provides
-              interactive receipt editing, automatic calculations,
-              digital signatures, custom branding and print-ready output.
-            </p>
-
-            <ul class="feature-list">
-
-              <li>
-                <span class="feature-check">✓</span>
-                Interactive in-place receipt editing
-              </li>
-
-              <li>
-                <span class="feature-check">✓</span>
-                Petrol, Diesel, CNG and 2T Oil calculations
-              </li>
-
-              <li>
-                <span class="feature-check">✓</span>
-                Automatic quantity × rate calculations
-              </li>
-
-              <li>
-                <span class="feature-check">✓</span>
-                Digital signature pad and stamp modes
-              </li>
-
-              <li>
-                <span class="feature-check">✓</span>
-                Custom dealer and station logos
-              </li>
-
-              <li>
-                <span class="feature-check">✓</span>
-                Print and PDF-ready thermal receipt styling
-              </li>
-
-            </ul>
-
-            <div class="project-actions">
-
-              <a
-                href="https://rickykhatri.github.io/rk-fuel-bill-generator/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary"
-              >
-                Launch Generator ↗
-              </a>
-
-              <a
-                href="https://github.com/rickykhatri/rk-fuel-bill-generator"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-secondary"
-              >
-                <svg class="github-icon" viewBox="0 0 24 24">
-                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c0-.31-.21-.67-.79-.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5s11.5 5.15 11.5 11.5c0 5.08-3.29 9.39-7.86 10.91-.58.11-.8-.25-.8-.56v-3.23c0-1.1-.37-1.82-.78-2.18 2.56-.28 5.25-1.26 5.25-5.69 0-1.26-.45-2.29-1.18-3.1.12-.29.51-1.47-.11-3.06 0 0-.96-.31-3.15 1.18a10.94 10.94 0 0 0-5.74 0C6.94 4.78 5.98 5.09 5.98 5.09c-.62 1.59-.23 2.77-.11 3.06-.73.81-1.18 1.84-1.18 3.1 0 4.42 2.68 5.41 5.23 5.7-.33.28-.63.78-.73 1.52-.65.29-2.31.8-3.33-.95 0 0-.6-1.1-1.75-1.18 0 0-1.12-.01-.08.7 0 0 .75.36 1.28 1.69 0 0 .68 2.24 3.88 1.54v2.17c0 .31-.21.67-.79.56C3.79 21.39.5 17.08.5 12 .5 5.65 5.65.5 12 .5z"/>
-                </svg>
-                GitHub
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <div class="receipt-wrap">
-
-            <div class="receipt-glow"></div>
-
-            <div class="receipt">
-
-              <div class="receipt-head">
-
-                <div class="receipt-logo">
-                  BP
-                </div>
-
-                <div class="receipt-title">
-                  <strong>FUEL STATION</strong>
-                  <span>CASH / CREDIT MEMO</span>
-                </div>
-
-                <div class="receipt-logo">
-                  AGL
-                </div>
-
-              </div>
-
-              <div class="receipt-meta">
-
-                <div>
-                  Memo No.<br />
-                  <strong>343</strong>
-                </div>
-
-                <div>
-                  Date<br />
-                  <strong>18/09/2026</strong>
-                </div>
-
-                <div>
-                  Customer<br />
-                  <strong>Customer Name</strong>
-                </div>
-
-                <div>
-                  Vehicle<br />
-                  <strong>MP09 XX 0000</strong>
-                </div>
-
-              </div>
-
-              <div class="receipt-line">
-                <span>PRODUCT</span>
-                <span>AMOUNT</span>
-              </div>
-
-              <div class="receipt-line">
-                <span>Petrol × 10 L</span>
-                <span>₹ 1,000.00</span>
-              </div>
-
-              <div class="receipt-line">
-                <span>Diesel × 5 L</span>
-                <span>₹ 450.00</span>
-              </div>
-
-              <div class="receipt-line">
-                <span>CNG × 2 KG</span>
-                <span>₹ 180.00</span>
-              </div>
-
-              <div class="receipt-total">
-                <span>TOTAL</span>
-                <span>₹ 1,630.00</span>
-              </div>
-
-              <div class="receipt-sign">
-                <span>Customer Signature</span>
-                <span>Dealer Signature</span>
-              </div>
-
-            </div>
-
-          </div>
 
         </div>
 
@@ -1555,21 +1370,155 @@
 </section>
 
 
-<!-- CAPABILITIES -->
+<!-- =========================
+     FEATURED FUEL PROJECT
+========================= -->
+
 <section>
+
+  <div class="container">
+
+    <div class="featured">
+
+      <div class="featured-content">
+
+        <div class="featured-badge">
+          Featured Product
+        </div>
+
+        <h3>
+          Fuel Bill &amp; Cash Memo Generator
+        </h3>
+
+        <p class="featured-description">
+          A practical billing utility for generating professional
+          fuel bills and cash memos directly from a browser.
+          Designed for fast data entry, clean printable output
+          and everyday business use.
+        </p>
+
+        <ul class="feature-list">
+          <li>Generate fuel bills and cash memos quickly</li>
+          <li>Professional receipt-style printable layout</li>
+          <li>Designed for simple browser-based workflows</li>
+          <li>Useful for fuel stations and billing operations</li>
+        </ul>
+
+        <div class="tags">
+
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Print Ready</span>
+
+        </div>
+
+        <div class="project-links">
+
+          <a
+            href="https://rickykhatri.github.io/rk-fuel-bill-generator/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Open Project →
+          </a>
+
+          <a
+            href="https://github.com/rickykhatri/rk-fuel-bill-generator"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg class="github-icon" viewBox="0 0 24 24">
+              <path d="M12 .7A12 12 0 0 0 8.2 24c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.8 2.9 1.3 3.6 1-.1-.8-.4-1.3-.7-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.3-3.3c-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.3a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+            </svg>
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="receipt-wrap">
+
+        <div class="receipt">
+
+          <div class="receipt-header">
+            <strong>RK FUEL STATION</strong>
+            <span>FUEL BILL / CASH MEMO</span>
+          </div>
+
+          <div class="receipt-row muted">
+            <span>Bill No.</span>
+            <span>RK-10428</span>
+          </div>
+
+          <div class="receipt-row muted">
+            <span>Date</span>
+            <span>18 Sep 2026</span>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-row">
+            <span>Petrol</span>
+            <span>20.00 L</span>
+          </div>
+
+          <div class="receipt-row">
+            <span>Rate / L</span>
+            <span>₹ 103.50</span>
+          </div>
+
+          <div class="receipt-row">
+            <span>Fuel Amount</span>
+            <span>₹ 2,070.00</span>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-total">
+            <span>TOTAL</span>
+            <span>₹ 2,070.00</span>
+          </div>
+
+          <div class="receipt-footer">
+            Thank you for your business.
+            <br />
+            Please retain this memo for your records.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CAPABILITIES
+========================= -->
+
+<section id="capabilities">
 
   <div class="container">
 
     <div class="section-heading">
 
       <div>
-        <div class="section-kicker">02 / Capabilities</div>
-        <h2>What I build</h2>
+        <div class="section-kicker">Engineering Focus</div>
+        <h2 class="section-title">Capabilities</h2>
       </div>
 
-      <p>
-        Combining backend engineering, AI, APIs and modern frontend
-        development to create useful software products.
+      <p class="section-description">
+        Building systems with a focus on maintainability,
+        integration and practical user outcomes.
       </p>
 
     </div>
@@ -1578,56 +1527,29 @@
     <div class="capabilities">
 
       <div class="capability">
-        <div class="capability-icon">🤖</div>
-        <h4>AI Applications</h4>
+        <div class="capability-number">01</div>
+        <h3>Backend Engineering</h3>
         <p>
-          Conversational AI, intelligent assistants, LLM integrations
-          and AI-powered application workflows.
+          REST APIs, Spring Boot services, Python applications,
+          authentication, business logic and scalable backend systems.
         </p>
       </div>
 
       <div class="capability">
-        <div class="capability-icon">⚙️</div>
-        <h4>Backend Engineering</h4>
+        <div class="capability-number">02</div>
+        <h3>AI Applications</h3>
         <p>
-          Java, Spring Boot and Python services with structured,
-          maintainable backend architectures.
+          AI assistants, LLM integrations, intelligent workflows,
+          tool calling and practical AI-powered applications.
         </p>
       </div>
 
       <div class="capability">
-        <div class="capability-icon">🔗</div>
-        <h4>API Development</h4>
+        <div class="capability-number">03</div>
+        <h3>Product Development</h3>
         <p>
-          REST APIs, API documentation, integrations and services
-          designed for application-to-application communication.
-        </p>
-      </div>
-
-      <div class="capability">
-        <div class="capability-icon">🧩</div>
-        <h4>MCP & AI Tools</h4>
-        <p>
-          Model Context Protocol based tooling for connecting AI
-          systems with structured capabilities and context.
-        </p>
-      </div>
-
-      <div class="capability">
-        <div class="capability-icon">🌐</div>
-        <h4>Full-Stack Web</h4>
-        <p>
-          Responsive web applications using modern frontend and
-          backend technologies.
-        </p>
-      </div>
-
-      <div class="capability">
-        <div class="capability-icon">🏢</div>
-        <h4>Business Applications</h4>
-        <p>
-          Practical applications such as billing, memo generation,
-          resume creation and business automation tools.
+          Turning practical requirements into usable web products,
+          internal tools, automation utilities and developer platforms.
         </p>
       </div>
 
@@ -1638,7 +1560,10 @@
 </section>
 
 
-<!-- TECHNOLOGY STACK -->
+<!-- =========================
+     TECHNOLOGY STACK
+========================= -->
+
 <section id="stack">
 
   <div class="container">
@@ -1646,13 +1571,13 @@
     <div class="section-heading">
 
       <div>
-        <div class="section-kicker">03 / Technology</div>
-        <h2>Technology stack</h2>
+        <div class="section-kicker">Technology</div>
+        <h2 class="section-title">Stack</h2>
       </div>
 
-      <p>
-        A flexible engineering stack selected according to the needs
-        of each project.
+      <p class="section-description">
+        A practical technology mix across backend development,
+        AI engineering, web applications and APIs.
       </p>
 
     </div>
@@ -1665,19 +1590,16 @@
       <span class="stack-item">Python</span>
       <span class="stack-item">FastAPI</span>
       <span class="stack-item">REST APIs</span>
-      <span class="stack-item">MCP</span>
-      <span class="stack-item">AI / LLM</span>
+      <span class="stack-item">WebSocket</span>
       <span class="stack-item">React</span>
-      <span class="stack-item">JavaScript</span>
-      <span class="stack-item">TypeScript</span>
       <span class="stack-item">Node.js</span>
-      <span class="stack-item">Express</span>
       <span class="stack-item">MongoDB</span>
-      <span class="stack-item">Docker</span>
+      <span class="stack-item">JavaScript</span>
+      <span class="stack-item">LLMs</span>
+      <span class="stack-item">MCP</span>
+      <span class="stack-item">Git</span>
       <span class="stack-item">GitHub</span>
-      <span class="stack-item">GitHub Actions</span>
-      <span class="stack-item">GitHub Pages</span>
-      <span class="stack-item">HTML / CSS</span>
+      <span class="stack-item">Automation</span>
 
     </div>
 
@@ -1686,28 +1608,25 @@
 </section>
 
 
-<!-- CTA -->
+<!-- =========================
+     CTA
+========================= -->
+
 <section id="contact">
 
   <div class="container">
 
     <div class="cta">
 
-      <div class="section-kicker">
-        04 / Explore the code
-      </div>
-
-      <h2>
-        Build. Experiment.
-        <span class="gradient-text">Ship.</span>
-      </h2>
+      <h2>Let's build something useful.</h2>
 
       <p>
-        Explore the live applications and source repositories to see
-        how the projects are built.
+        Interested in backend engineering, AI applications,
+        automation or building a practical software product?
+        Let's connect.
       </p>
 
-      <div class="hero-actions" style="justify-content:center">
+      <div class="hero-actions" style="justify-content:center;">
 
         <a
           href="https://github.com/rickykhatri"
@@ -1715,19 +1634,7 @@
           rel="noopener noreferrer"
           class="btn btn-primary"
         >
-          <svg class="github-icon" viewBox="0 0 24 24">
-            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.52-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
-          </svg>
-          View GitHub Profile
-        </a>
-
-        <a
-          href="https://rickykhatri.github.io/rk-fuel-bill-generator/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-secondary"
-        >
-          Try Fuel Generator ↗
+          View GitHub →
         </a>
 
       </div>
@@ -1737,19 +1644,21 @@
   </div>
 
 </section>
-```
+
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
-```
+
 <div class="container footer-inner">
 
   <div class="footer-copy">
-    © 2026 <strong>Ricky Khatri</strong>. Built with HTML, CSS & curiosity.
+    © 2026 RK Projects. Built with clean code and practical engineering.
   </div>
 
   <div class="footer-links">
@@ -1762,14 +1671,18 @@
       GitHub
     </a>
 
-    <a href="#top">
-      Back to top ↑
+    <a href="#projects">
+      Projects
+    </a>
+
+    <a href="#stack">
+      Stack
     </a>
 
   </div>
 
 </div>
-```
+
 
   </footer>
 
